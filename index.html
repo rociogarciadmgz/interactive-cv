@@ -31,7 +31,7 @@
             line-height: 1.6;
         }
 
-        /* --- NAVEGACIÓN FIJA (DISTRIBUIDA) --- */
+        /* --- NAVEGACIÓN FIJA --- */
         nav {
             position: fixed;
             top: 0;
@@ -139,7 +139,7 @@
             gap: 10px;
         }
 
-        /* --- SEPARADORES RESALTADOS --- */
+        /* --- SEPARADORES --- */
         .section-divider {
             display: flex;
             align-items: center;
@@ -163,7 +163,6 @@
             flex-grow: 1;
         }
 
-        /* --- SECCIONES --- */
         section {
             padding: 40px 8% 80px;
             max-width: 1400px;
@@ -188,7 +187,7 @@
             text-align: justify;
         }
 
-        /* --- TRAYECTORIA --- */
+        /* --- TRAYECTORIA CON TAREAS RESTAURADAS --- */
         .exp-item {
             margin-bottom: 60px;
             max-width: 900px;
@@ -207,17 +206,6 @@
             color: var(--text-main);
             margin-top: 5px;
             display: block;
-        }
-
-        .exp-company a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
-
-        .exp-company a:hover {
-            opacity: 0.7;
-            text-decoration: underline;
         }
 
         .exp-date {
@@ -265,13 +253,13 @@
             font-weight: bold;
         }
 
-        /* --- GALERÍA CARRUSEL (PEQUEÑO) --- */
+        /* --- GALERÍA AMPLIADA --- */
         .gallery-container {
-           display: grid;
-    grid-template-columns: 0.8fr 1.2fr; /* Invertimos la proporción anterior */
-    gap: 40px;
-    align-items: center;
-    margin-top: 20px;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 40px;
+            align-items: center;
+            margin-top: 20px;
         }
 
         .gallery-info h3 {
@@ -282,14 +270,14 @@
         }
 
         .carousel-wrapper {
-           position: relative;
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    border: 2px solid var(--line-strong);
-    background: #fff;
-    max-width: 650px; /* Aumentado de 450px a 650px */
-    justify-self: end; /* Lo alineamos a la derecha */
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            border: 2px solid var(--line-strong);
+            background: #fff;
+            max-width: 650px; 
+            justify-self: end;
         }
 
         .carousel-track {
@@ -310,6 +298,20 @@
             object-fit: cover;
         }
 
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 40px 20px 20px;
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            pointer-events: none;
+        }
+
         .carousel-nav {
             position: absolute;
             bottom: 15px;
@@ -324,7 +326,7 @@
             font-size: 0.8rem;
         }
 
-        /* --- CURSOS --- */
+        /* --- EDUCACIÓN Y CURSOS --- */
         .sub-heading {
             font-family: 'Poppins', sans-serif;
             font-size: 0.8rem;
@@ -426,12 +428,11 @@
         @media (max-width: 900px) {
             nav { padding: 0 5%; }
             .nav-links { gap: 15px; overflow-x: auto; padding-bottom: 5px; }
-            .nav-links a { font-size: 0.6rem; letter-spacing: 1px; }
             .logo { font-size: 0.9rem; }
             header { padding-top: 120px; }
-            .hero-content { grid-template-columns: 1fr; }
+            .hero-content, .gallery-container, .courses-grid, .skills-container { grid-template-columns: 1fr; }
             .hero-meta { text-align: left; margin-top: 20px; }
-            .courses-grid, .skills-container, .gallery-container { grid-template-columns: 1fr; gap: 30px; }
+            .carousel-wrapper { max-width: 100%; }
         }
     </style>
 </head>
@@ -456,9 +457,7 @@
         </div>
         <div class="hero-content">
             <div>
-                <p class="tagline">
-                    Estudiante de Gastronomía e Innovación Culinaria.
-                </p>
+                <p class="tagline">Estudiante de Gastronomía e Innovación Culinaria.</p>
             </div>
             <div class="hero-meta">
                 <span>Automatización & IA</span>
@@ -469,28 +468,20 @@
     </header>
 
     <section id="acerca">
-        <div class="section-divider">
-            <div class="divider-accent"></div>
-            <div class="divider-line"></div>
-        </div>
-        <div class="section-header">
-            <span class="section-label">Sobre mí</span>
-        </div>
+        <div class="section-divider"><div class="divider-accent"></div><div class="divider-line"></div></div>
+        <span class="section-label">Sobre mí</span>
         <div class="about-text">
-            <p style="margin-bottom: 20px;">Estudiante de Gastronomía e Innovación Culinaria en la Universidad Pontificia Comillas (Madrid Culinary Campus). Esta formación interdisciplinar me está permitiendo combinar el conocimiento técnico del sector con una sólida base en gestión empresarial.</p>
-            <p style="margin-bottom: 20px;">Mi perfil profesional se orienta hacia la parte analítica y estratégica de la industria. Aunque cuento con alta formación y experiencia culinaria, mi objetivo es especializarme en la gestión de operaciones, el análisis de datos y la optimización y automatización de procesos para mejorar la eficiencia y la rentabilidad de los negocios de restauración.</p>
+            <p>Estudiante de Gastronomía e Innovación Culinaria en la Universidad Pontificia Comillas (Madrid Culinary Campus). Esta formación interdisciplinar me está permitiendo combinar el conocimiento técnico del sector con una sólida base en gestión empresarial.
+
+Mi perfil profesional se orienta hacia la parte analítica y estratégica de la industria. Aunque cuento con alta formación y experiencia culinaria, mi objetivo es especializarme en la gestión de operaciones, el análisis de datos y la optimización y automatización de procesos para mejorar la eficiencia y la rentabilidad de los negocios de restauración..</p>
         </div>
     </section>
 
     <section id="experiencia">
-        <div class="section-divider">
-            <div class="divider-accent"></div>
-            <div class="divider-line"></div>
-        </div>
-        <div class="section-header">
-            <span class="section-label">Experiencia Laboral</span>
-        </div>
+        <div class="section-divider"><div class="divider-accent"></div><div class="divider-line"></div></div>
+        <span class="section-label">Experiencia Laboral</span>
         
+        <!-- Bite House Burger -->
         <div class="exp-item">
             <span class="badge-practicas">Contrato de Prácticas</span>
             <h3 class="exp-title">Analista de Operaciones</h3>
@@ -498,39 +489,42 @@
             <span class="exp-date">Enero 2026 — Abril 2026</span>
             <ul class="exp-desc">
                 <li>Implementación de flujos en n8n para reducir tiempos en tareas repetitivas.</li>
-                <li>Análisis y visualización de datos para decisiones estratégicas.</li>
+                <li>Análisis y visualización de datos para la toma de decisiones estratégicas.</li>
                 <li>Auditoría y control de calidad en procesos operativos de cocina.</li>
             </ul>
         </div>
 
+        <!-- El Corte Inglés -->
         <div class="exp-item">
             <h3 class="exp-title">Ayudante de Cocina</h3>
             <span class="exp-company">El Corte Inglés / Madrid (Jornada Parcial)</span>
             <span class="exp-date">Diciembre 2025 — Enero 2026</span>
             <ul class="exp-desc">
-                <li>Preparación de mise en place y emplatado final durante la campaña de Navidad.</li>
+                <li>Preparación de mise en place y emplatado final durante la campaña de Navidad..</li>
             </ul>
         </div>
 
+        <!-- Pepe Vieira -->
         <div class="exp-item">
             <span class="badge-practicas">Contrato de Prácticas</span>
             <h3 class="exp-title">Auxiliar Administrativa</h3>
             <span class="exp-company">Pepe Vieira ** Estrellas Michelín / Pontevedra</span>
             <span class="exp-date">Junio 2025 — Julio 2025</span>
             <ul class="exp-desc">
-                <li>Gestión integral de facturación y conciliación bancaria.</li>
-                <li>Actualización de inventario en bodega con más de 400 referencias.</li>
+                <li>Gestión integral de facturación y conciliación bancaria diaria.</li>
+                <li>Actualización y control de inventario de una bodega con más de 400 referencias.</li>
             </ul>
         </div>
 
+        <!-- Maruja Limón -->
         <div class="exp-item">
             <span class="badge-practicas">Contrato de Prácticas</span>
             <h3 class="exp-title">Ayudante de Cocina</h3>
             <span class="exp-company">Maruja Limón * Estrella Michelín / Vigo</span>
             <span class="exp-date">Julio 2024 — Agosto 2024</span>
             <ul class="exp-desc">
-                <li>Ejecución técnica de mise en place bajo estándares de alta cocina.</li>
-                <li>Responsabilidad directa en el acabado y presentación final de platos.</li>
+                <li>Ejecución técnica de mise en place bajo estándares de alta cocina Michelín.</li>
+                <li>Responsabilidad directa en el acabado estético y presentación final de platos creativos.</li>
             </ul>
         </div>
     </section>
@@ -553,13 +547,11 @@
             <p style="color: var(--text-secondary); margin-top: 15px; font-size: 1.1rem;">Formación que integra la gestión empresarial, sostenibilidad e innovación culinaria del sector hostelero.</p>
         </div>
 
-        <!-- SUBTEMA CURSOS AÑADIDO AQUÍ -->
         <h4 class="sub-heading">Cursos</h4>
-
         <div class="courses-grid">
             <a href="https://moocs.comillas.edu/certificates/c6cdf74350864d7d93140281cf395970" target="_blank" class="course-card">
                 <i class="fa-solid fa-chart-pie course-icon"></i>
-                <h4>Business Analytics</h4>
+                <h4>Introducción al Business Analytics</h4>
                 <p>U. P. Comillas / Marzo 2026</p>
             </a>
             <a href="https://www.udemy.com/certificate/UC-c610dfac-7a0f-48b3-b60c-9b3d9fe32afe/" target="_blank" class="course-card">
@@ -581,13 +573,8 @@
     </section>
 
     <section id="habilidades">
-        <div class="section-divider">
-            <div class="divider-accent"></div>
-            <div class="divider-line"></div>
-        </div>
-        <div class="section-header">
-            <span class="section-label">Habilidades</span>
-        </div>
+        <div class="section-divider"><div class="divider-accent"></div><div class="divider-line"></div></div>
+        <span class="section-label">Habilidades</span>
         <div class="skills-container">
             <div class="skill-item">
                 <i class="fa-solid fa-robot skill-icon"></i>
@@ -601,8 +588,8 @@
             </div>
             <div class="skill-item">
                 <i class="fa-solid fa-kitchen-set skill-icon"></i>
-                <h4>Gastronomía</h4>
-                <p>Gestión de inventarios y control de costes F&B.</p>
+                <h4>Gestión Gastronómica</h4>
+                <p>Auditoría operativa, gestión de inventarios y control de costes.</p>
             </div>
             <div class="skill-item">
                 <i class="fa-solid fa-language skill-icon"></i>
@@ -613,27 +600,39 @@
     </section>
 
     <section id="galeria">
-        <div class="section-divider">
-            <div class="divider-accent"></div>
-            <div class="divider-line"></div>
-        </div>
-        <div class="section-header">
-            <span class="section-label">Galería de Imágenes</span>
-        </div>
-        
+        <div class="section-divider"><div class="divider-accent"></div><div class="divider-line"></div></div>
+        <span class="section-label">Galería de Imágenes</span>
         <div class="gallery-container">
             <div class="gallery-info">
                 <h3>Innovación & Práctica</h3>
-                <p>Una selección visual de mi trayectoria durante la universidad</p>
+                <p>Una selección visual de mi trayectoria durante la universidad.</p>
             </div>
-            
             <div class="carousel-wrapper">
                 <div class="carousel-track" id="track">
-                    <div class="carousel-slide"><img src="foto1.jpg" onerror="this.src='https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&q=80&w=800'"></div>
-                    <div class="carousel-slide"><img src="foto2.jpg" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800'"></div>
-                    <div class="carousel-slide"><img src="foto3.jpg" onerror="this.src='https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800'"></div>
-                    <div class="carousel-slide"><img src="foto4.jpg" onerror="this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800'"></div>
-                    <div class="carousel-slide"><img src="foto5.jpg" onerror="this.src='https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=800'"></div>
+                    <div class="carousel-slide">
+                        <img src="foto1.jpg" onerror="this.src='https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&q=80&w=800'">
+                        <div class="carousel-caption">Clase de Técnicas Culinarias (2024).</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="foto2.jpg" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800'">
+                        <div class="carousel-caption">Taller gastronómicco en San Sebastián Gastronomika (2024).</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="foto3.jpg" onerror="this.src='https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800'">
+                        <div class="carousel-caption">Masterclass de Javier Sanz y Juan Sahuquillo, Grupo Cañitas (2024).</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="foto4.jpg" onerror="this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800'">
+                        <div class="carousel-caption">Ponencia de Oscar Pierre, CEO de Glovo en HIP (2026).</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="foto5.jpg" onerror="this.src='https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=800'">
+                        <div class="carousel-caption">Asistente de ponentes en Madrid Fusión (2026).</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="foto6.jpg" onerror="this.src='https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800'">
+                        <div class="carousel-caption">Charla de Carlos Esteve, CEO de Jekes (2024) .</div>
+                    </div>
                 </div>
                 <div class="carousel-nav">
                     <button class="carousel-btn" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
@@ -644,10 +643,7 @@
     </section>
 
     <footer id="contacto">
-        <div class="section-divider">
-            <div class="divider-accent"></div>
-            <div class="divider-line"></div>
-        </div>
+        <div class="section-divider"><div class="divider-accent"></div><div class="divider-line"></div></div>
         <a href="mailto:rociogarciadmgz@gmail.com" class="email-link">rociogarciadmgz@gmail.com</a>
         <div class="social-links">
             <a href="https://linkedin.com/in/rocio-garcia-dominguez" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -659,14 +655,15 @@
     <script>
         let currentSlide = 0;
         let autoSlideInterval;
-        const slides = document.querySelectorAll('.carousel-slide');
         const track = document.getElementById('track');
 
         function updateSlide() {
+            const slides = document.querySelectorAll('.carousel-slide');
             track.style.transform = `translateX(-${currentSlide * 100}%)`;
         }
 
         function moveSlide(direction) {
+            const slides = document.querySelectorAll('.carousel-slide');
             currentSlide = (currentSlide + direction + slides.length) % slides.length;
             updateSlide();
             resetTimer();
@@ -674,6 +671,7 @@
 
         function startAutoSlide() {
             autoSlideInterval = setInterval(() => {
+                const slides = document.querySelectorAll('.carousel-slide');
                 currentSlide = (currentSlide + 1) % slides.length;
                 updateSlide();
             }, 3000); 
