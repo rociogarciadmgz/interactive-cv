@@ -267,11 +267,11 @@
 
         /* --- GALERÍA CARRUSEL (PEQUEÑO) --- */
         .gallery-container {
-            display: grid;
-            grid-template-columns: 1.3fr 0.7fr; 
-            gap: 60px;
-            align-items: center;
-            margin-top: 20px;
+           display: grid;
+    grid-template-columns: 0.8fr 1.2fr; /* Invertimos la proporción anterior */
+    gap: 40px;
+    align-items: center;
+    margin-top: 20px;
         }
 
         .gallery-info h3 {
@@ -282,14 +282,14 @@
         }
 
         .carousel-wrapper {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 4 / 3;
-            overflow: hidden;
-            border: 2px solid var(--line-strong);
-            background: #fff;
-            max-width: 450px;
-            justify-self: center;
+           position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border: 2px solid var(--line-strong);
+    background: #fff;
+    max-width: 650px; /* Aumentado de 450px a 650px */
+    justify-self: end; /* Lo alineamos a la derecha */
         }
 
         .carousel-track {
@@ -572,10 +572,10 @@
                 <h4>MySQL a Supabase</h4>
                 <p>Udemy / Enero 2026</p>
             </a>
-            <a href="https://www.coursera.org/account/accomplishments/verify/RVHJKPA22W47" target="_blank" class="course-card">
+            <a href="https://coursera.org/share/ff59cdfce7d84252f90d2ba17acbe7ad" target="_blank" class="course-card">
                 <i class="fa-solid fa-wine-glass course-icon"></i>
                 <h4>F&B Management</h4>
-                <p>Coursera / 2025</p>
+                <p>Coursera / Octubre 2025</p>
             </a>
         </div>
     </section>
