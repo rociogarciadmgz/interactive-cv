@@ -123,7 +123,18 @@
         .sub-heading { font-family: 'Poppins', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; margin-top: 40px; margin-bottom: 20px; display: flex; align-items: center; font-weight: 700; }
         .sub-heading::after { content: ""; height: 1px; background: var(--line-strong); flex-grow: 1; margin-left: 20px; }
         .courses-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 10px; }
-        .course-card { background: var(--accent-soft); padding: 25px; text-decoration: none; color: inherit; transition: 0.4s; min-height: 180px; display: flex; flex-direction: column; justify-content: space-between; border: 2px solid transparent; }
+        .course-card { 
+            background: var(--accent-soft); 
+            padding: 25px; 
+            text-decoration: none; 
+            color: inherit; 
+            transition: 0.4s; 
+            min-height: 180px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            border: 2px solid transparent; 
+        }
         .course-card:hover { transform: translateY(-8px); border-color: var(--accent-color); }
         .course-card h4 { font-family: 'Poppins', sans-serif; font-size: 0.9rem; color: var(--accent-color); font-weight: 700; }
         .course-icon { font-size: 1.3rem; margin-bottom: 15px; color: var(--text-main); }
@@ -233,7 +244,7 @@
         <div class="exp-item">
             <span class="badge-practicas" data-i18n="badge-intern">Contrato de Prácticas</span>
             <h3 class="exp-title" data-i18n="exp1-t">Analista de Operaciones</h3>
-            <span class="exp-company">BITE HOUSE BURGER / TRES CANTOS</span>
+            <span class="exp-company">BITE HOUSE BURGER® / TRES CANTOS</span>
             <span class="exp-date" data-i18n="exp1-d">Enero 2026 — Abril 2026 (Jornada Parcial)</span>
             <ul class="exp-desc">
                 <li data-i18n="exp1-l1">Implementación de flujos en n8n para reducir tiempos operativos.</li>
@@ -247,30 +258,29 @@
             <span class="exp-company">EL CORTE INGLÉS / MADRID</span>
             <span class="exp-date" data-i18n="exp2-d">Diciembre 2025 — Enero 2026 (Jornada Parcial)</span>
             <ul class="exp-desc">
-                <li data-i18n="exp2-l1">Preparación integral de mise en place bajo alta demanda de servicio.</li>
-                <li data-i18n="exp2-l2">Finalización y emplatado final siguiendo estándares de calidad.</li>
+                <li data-i18n="exp2-l1">Preparación de mise en place y emplatado final durante la campaña de Navidad.</li>
             </ul>
         </div>
 
         <div class="exp-item">
             <span class="badge-practicas" data-i18n="badge-intern">Contrato de Prácticas</span>
             <h3 class="exp-title" data-i18n="exp3-t">Auxiliar Administrativa</h3>
-            <span class="exp-company">PEPE VIEIRA ** Estrellas Michelin / Pontevedra</span>
-            <span class="exp-date" data-i18n="exp3-d">Junio 2025 — Julio 2025</span>
+            <span class="exp-company">PEPE VIEIRA ** ESTRELLAS MICHELIN / PONTEVEDRA</span>
+            <span class="exp-date" data-i18n="exp3-d">Junio 2025 — Julio 2025 (JORNADA COMPLETA)</span>
             <ul class="exp-desc">
                 <li data-i18n="exp3-l1">Gestión integral de facturación y conciliación bancaria diaria.</li>
-                <li data-i18n="exp3-l2">Control de inventario de bodega con más de 400 referencias críticas.</li>
+                <li data-i18n="exp3-l2">Actualización y control de inventario de una bodega con más de 400 referencias.</li>
             </ul>
         </div>
 
         <div class="exp-item">
             <span class="badge-practicas" data-i18n="badge-intern">Contrato de Prácticas</span>
             <h3 class="exp-title" data-i18n="exp4-t">Ayudante de Cocina</h3>
-            <span class="exp-company">MARUJA LIMÓN * Estrella Michelin / Vigo</span>
-            <span class="exp-date" data-i18n="exp4-d">Julio 2024 — Agosto 2024</span>
+            <span class="exp-company">MARUJA LIMÓN * ESTRELLA MICHELIN / VIGO</span>
+            <span class="exp-date" data-i18n="exp4-d">Julio 2024 — Agosto 2024 (JORNADA COMPLETA)</span>
             <ul class="exp-desc">
                 <li data-i18n="exp4-l1">Ejecución técnica de mise en place bajo estándares Michelin de alta cocina.</li>
-                <li data-i18n="exp4-l2">Responsabilidad en el acabado estético de platos creativos.</li>
+                <li data-i18n="exp4-l2">Responsable del acabado y emplatado final durante el pase.</li>
             </ul>
         </div>
     </section>
@@ -280,33 +290,39 @@
         <span class="section-label" data-i18n="nav-edu">Educación</span>
         <div class="exp-item">
             <h3 class="exp-title" data-i18n="edu-degree">Grado en Gastronomía e Innovación Culinaria</h3>
-            <span class="exp-company">Madrid Culinary Campus / Univ. Pontificia de Comillas</span>
+            <span class="exp-company">
+                <a href="https://www.maccmadrid.com/" target="_blank" style="color:inherit; text-decoration: underline;">Madrid Culinary Campus</a> / Univ. Pontificia de Comillas
+            </span>
             <span class="exp-date">2023 – 2027</span>
-            <p style="margin-top:10px;" data-i18n="edu-desc">Enfoque en gestión, sostenibilidad y digitalización del sector hostelero.</p>
+            <p style="margin-top:10px;" data-i18n="edu-desc">Formación que integra la gestión empresarial, sostenibilidad e innovación culinaria del sector hostelero..</p>
         </div>
 
         <h4 class="sub-heading" data-i18n="edu-courses">Cursos</h4>
         <div class="courses-grid">
-            <div class="course-card">
+            <!-- CURSO 1 -->
+            <a href="#" target="_blank" class="course-card">
                 <i class="fa-solid fa-chart-pie course-icon"></i>
                 <h4 data-i18n="c1-t">Business Analytics</h4>
                 <p>U. P. Comillas</p>
-            </div>
-            <div class="course-card">
+            </a>
+            <!-- CURSO 2 -->
+            <a href="#" target="_blank" class="course-card">
                 <i class="fa-solid fa-robot course-icon"></i>
                 <h4 data-i18n="c2-t">n8n + Agentes IA</h4>
                 <p>Udemy</p>
-            </div>
-            <div class="course-card">
+            </a>
+            <!-- CURSO 3 -->
+            <a href="#" target="_blank" class="course-card">
                 <i class="fa-solid fa-database course-icon"></i>
                 <h4 data-i18n="c3-t">SQL & Databases</h4>
-                <p>Udemy / Supabase</p>
-            </div>
-            <div class="course-card">
+                <p>Udemy</p>
+            </a>
+            <!-- CURSO 4 -->
+            <a href="#" target="_blank" class="course-card">
                 <i class="fa-solid fa-wine-glass course-icon"></i>
                 <h4 data-i18n="c4-t">F&B Management</h4>
                 <p>Coursera</p>
-            </div>
+            </a>
         </div>
     </section>
 
@@ -332,7 +348,7 @@
             <div class="skill-item">
                 <i class="fa-solid fa-language skill-icon"></i>
                 <h4 data-i18n="s4-t">Idiomas</h4>
-                <p data-i18n="s4-d">Español (Nativo), Inglés (B2+), Francés (A1).</p>
+                <p data-i18n="s4-d">Castellano (Nativo)   |   Inglés (B2+)   |   Francés (A1).</p>
             </div>
         </div>
     </section>
@@ -387,7 +403,7 @@
             <a href="https://linkedin.com/in/rocio-garcia-dominguez" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             <a href="https://github.com/rociogarciadmgz" target="_blank"><i class="fab fa-github"></i></a>
         </div>
-        <p class="copyright">© 2026 | Rocío García Domínguez.</p>
+        <p class="copyright">© 2026 | Rocío García.</p>
     </footer>
 
     <script>
@@ -400,9 +416,9 @@
                 "about-p2": "Mi perfil profesional se orienta hacia la parte analítica y estratégica de la industria. Aunque cuento con alta formación y experiencia culinaria, mi objetivo es especializarme en la gestión de operaciones, el análisis de datos y la optimización y automatización de procesos para mejorar la eficiencia y la rentabilidad de los negocios de restauración.",
                 "badge-intern": "Contrato de Prácticas",
                 "exp1-t": "Analista de Operaciones", "exp1-d": "Enero 2026 — Abril 2026 (Jornada Parcial)", "exp1-l1": "Implementación de flujos en n8n para reducir tiempos operativos.", "exp1-l2": "Análisis y visualización de datos para la toma de decisiones estratégicas.", "exp1-l3": "Auditoría y control de calidad en procesos operativos de cocina.",
-                "exp2-t": "Ayudante de Cocina", "exp2-d": "Diciembre 2025 — Enero 2026 (Jornada Parcial)", "exp2-l1": "Preparación integral de mise en place bajo alta demanda de servicio.", "exp2-l2": "Finalización y emplatado final siguiendo estándares de calidad.",
-                "exp3-t": "Auxiliar Administrativa", "exp3-d": "Junio 2025 — Julio 2025", "exp3-l1": "Gestión integral de facturación y conciliación bancaria diaria.", "exp3-l2": "Control de inventario de bodega con más de 400 referencias críticas.",
-                "exp4-t": "Ayudante de Cocina", "exp4-d": "Julio 2024 — Agosto 2024", "exp4-l1": "Ejecución técnica de mise en place bajo estándares Michelin de alta cocina.", "exp4-l2": "Responsabilidad en el acabado estético de platos creativos.",
+                "exp2-t": "Ayudante de Cocina", "exp2-d": "Diciembre 2025 — Enero 2026 (Jornada Parcial)", "exp2-l1": "Preparación de mise en place y emplatado final durante la campaña de Navidad.",
+                "exp3-t": "Auxiliar Administrativa", "exp3-d": "Junio 2025 — Julio 2025 (JORNADA COMPLETA)", "exp3-l1": "Gestión integral de facturación y conciliación bancaria diaria.", "exp3-l2": "Actualización y control de inventario de una bodega con más de 400 referencias.",
+                "exp4-t": "Ayudante de Cocina", "exp4-d": "Julio 2024 — Agosto 2024 (JORNADA COMPLETA)", "exp4-l1": "Ejecución técnica de mise en place bajo estándares Michelin de alta cocina.", "exp4-l2": "Responsable del acabado y emplatado final durante el pase.",
                 "edu-degree": "Grado en Gastronomía e Innovación Culinaria", "edu-desc": "Enfoque en gestión, sostenibilidad y digitalización del sector hostelero.", "edu-courses": "Cursos",
                 "c1-t": "Business Analytics", "c2-t": "n8n + Agentes IA", "c3-t": "SQL & Databases", "c4-t": "F&B Management",
                 "s1-t": "Automatización", "s1-d": "n8n, Agentes IA y optimización de flujos.",
@@ -420,9 +436,9 @@
                 "about-p2": "My professional profile is oriented towards the analytical and strategic side of the industry. Despite my high level of culinary training and experience, my goal is to specialize in operations management, data analysis, and process automation to improve efficiency and profitability.",
                 "badge-intern": "Internship",
                 "exp1-t": "Operations Analyst", "exp1-d": "January 2026 — April 2026 (Part-time)", "exp1-l1": "Implementation of n8n workflows to reduce operational times.", "exp1-l2": "Data analysis and visualization for strategic decision-making.", "exp1-l3": "Auditing and quality control in kitchen operational processes.",
-                "exp2-t": "Kitchen Assistant", "exp2-d": "December 2025 — January 2026 (Part-time)", "exp2-l1": "Integral mise-en-place preparation under high service demand.", "exp2-l2": "Finishing and plating following high quality standards.",
-                "exp3-t": "Administrative Assistant", "exp3-d": "June 2025 — July 2025", "exp3-l1": "Integral invoicing management and daily bank reconciliation.", "exp3-l2": "Wine cellar inventory control with over 400 critical references.",
-                "exp4-t": "Kitchen Assistant", "exp4-d": "July 2024 — August 2024", "exp4-l1": "Technical execution of mise-en-place under Michelin standards.", "exp4-l2": "Responsibility for the aesthetic finish of creative dishes.",
+                "exp2-t": "Kitchen Assistant", "exp2-d": "December 2025 — January 2026 (Part-time)", "exp2-l1": "Mise en place preparation and final plating during the Christmas campaign.",
+                "exp3-t": "Administrative Assistant", "exp3-d": "June 2025 — July 2025 (FULL TIME)", "exp3-l1": "Integral invoicing management and daily bank reconciliation.", "exp3-l2": "Wine cellar inventory control with over 400 references.",
+                "exp4-t": "Kitchen Assistant", "exp4-d": "July 2024 — August 2024 (FULL TIME)", "exp4-l1": "Technical execution of mise-en-place under Michelin standards.", "exp4-l2": "Responsible for finishing and final plating during service.",
                 "edu-degree": "Bachelor's in Gastronomy & Culinary Innovation", "edu-desc": "Focus on management, sustainability, and hospitality digitalization.", "edu-courses": "Certifications",
                 "c1-t": "Business Analytics", "c2-t": "n8n + AI Agents", "c3-t": "SQL & Databases", "c4-t": "F&B Management",
                 "s1-t": "Automation", "s1-d": "n8n, AI Agents, and workflow optimization.",
