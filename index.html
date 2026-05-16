@@ -137,9 +137,10 @@
         .experience-card {
             transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
             border: 1px solid #f1f5f9;
-            padding: 2rem;
-            border-radius: 1.25rem;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
             background: #fff;
+            width: 100%;
         }
         .experience-card:hover {
             border-color: #3b82f6;
@@ -152,16 +153,15 @@
             text-transform: uppercase;
             letter-spacing: 0.4em;
             color: #3b82f6;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             display: block;
         }
 
-        /* --- DISEÑO HABILIDADES (ÓVALOS) --- */
         .skill-tag-oval {
             border: 1px solid #e2e8f0;
-            padding: 8px 18px;
+            padding: 10px 22px;
             border-radius: 99px;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             font-weight: 600;
             color: #050505;
             display: inline-block;
@@ -176,8 +176,8 @@
 
         .course-card {
             border: 1px solid #f1f5f9;
-            padding: 1.5rem;
-            border-radius: 1rem;
+            padding: 1.75rem;
+            border-radius: 1.25rem;
             transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
             display: flex;
             justify-content: space-between;
@@ -236,15 +236,15 @@
         <div id="cursor"></div>
     </div>
 
-    <!-- Navegación -->
+    <!-- Navegación Ancho Completo -->
     <nav class="fixed top-0 w-full z-[100] bg-white/80 backdrop-blur-md border-b border-zinc-100">
-        <div class="max-w-screen-2xl mx-auto flex justify-between items-center px-8 py-4">
+        <div class="max-w-[95vw] mx-auto flex justify-between items-center px-4 py-6">
             <a href="#" class="magnetic font-display font-extrabold text-2xl tracking-tighter text-noir">
                 RG<span class="interactive-area" data-lens="true">.</span>
             </a>
             
             <div class="flex items-center gap-10">
-                <div class="hidden md:flex gap-8 text-[9px] font-black uppercase tracking-[0.3em] text-accent">
+                <div class="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-[0.3em] text-accent">
                     <a href="#experiencia" class="magnetic interactive-area" data-lens="true" data-key="nav_exp">Experiencia</a>
                     <a href="#formacion" class="magnetic interactive-area" data-lens="true" data-key="nav_edu">Formación</a>
                     <a href="#habilidades" class="magnetic interactive-area" data-lens="true" data-key="nav_skills">Habilidades</a>
@@ -260,99 +260,99 @@
         </div>
     </nav>
 
-    <!-- Hero -->
-    <header class="min-h-[70vh] flex flex-col justify-center px-8 md:px-24 pt-32">
-        <div class="max-w-screen-2xl mx-auto w-full">
-            <h1 class="font-display text-[8.5vw] md:text-[8vw] font-extrabold tracking-tighter uppercase leading-[1.4] whitespace-nowrap overflow-visible flex items-center">
+    <!-- Hero Expandido -->
+    <header class="min-h-[80vh] flex flex-col justify-center px-8 md:px-12 pt-32">
+        <div class="max-w-[90vw] mx-auto w-full">
+            <h1 class="font-display text-[10vw] md:text-[9.5vw] font-extrabold tracking-tighter uppercase leading-[1.1] whitespace-nowrap overflow-visible flex items-center">
                 <span class="inline-block overflow-hidden py-4">
                     <span class="inline-block translate-y-[115%] animate-[slideUp_1s_ease_forwards] text-noir">Rocío</span>
                 </span>
-                <span class="inline-block overflow-hidden ml-[2.5vw] py-4 pr-6">
+                <span class="inline-block overflow-hidden ml-[3vw] py-4 pr-10">
                     <span class="inline-block translate-y-[115%] animate-[slideUp_1s_0.2s_ease_forwards] text-accent interactive-area" data-lens="true">García</span>
                 </span>
             </h1>
             
-            <div class="mt-4 max-w-2xl border-t border-noir pt-8 space-y-4">
-                <p class="text-xl md:text-2xl leading-tight font-medium tracking-tight text-noir/80" data-key="hero_title">
+            <div class="mt-8 max-w-4xl border-t border-noir pt-10 space-y-6">
+                <p class="text-2xl md:text-4xl leading-tight font-medium tracking-tight text-noir/80" data-key="hero_title">
                     Estudiante de Gastronomía e Innovación Culinaria.
                 </p>
-                <p class="text-[11px] md:text-xs leading-relaxed text-zinc-400 max-w-lg font-medium" data-key="hero_profile">
+                <p class="text-sm md:text-base leading-relaxed text-zinc-400 max-w-3xl font-medium" data-key="hero_profile">
                     Mi perfil profesional se orienta hacia la parte analítica y estratégica de la industria. Aunque cuento con alta formación y experiencia culinaria, mi objetivo es especializarme en la gestión de operaciones, el análisis de datos y la optimización y automatización de procesos para mejorar la eficiencia y la rentabilidad de los negocios de restauración.
                 </p>
             </div>
         </div>
     </header>
 
-    <!-- Sección: Experiencia -->
-    <section id="experiencia" class="py-12 px-8 md:px-24 scroll-mt-24">
-        <div class="max-w-4xl mx-auto">
+    <!-- Sección: Experiencia Ancho Completo -->
+    <section id="experiencia" class="py-24 px-8 md:px-12 scroll-mt-24">
+        <div class="max-w-[90vw] mx-auto">
             <span class="section-label text-reveal interactive-area" data-lens="true" data-key="sec_exp">Experiencia</span>
             
-            <div class="space-y-8">
+            <div class="grid grid-cols-1 gap-10">
                 <!-- AZOTEA -->
                 <div class="experience-card text-reveal group">
-                    <div class="flex flex-col md:flex-row justify-between items-start mb-4 gap-3">
+                    <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-3">
                         <div class="flex items-center gap-3">
                             <div class="badge-practicas" data-key="badge_intern">Contrato de Prácticas</div>
                             <div class="badge-jornada" data-key="badge_ft">Jornada Completa</div>
                         </div>
-                        <span class="text-[9px] uppercase font-bold text-accent interactive-area" data-lens="true" data-key="exp1_date">Mayo — Julio 2026</span>
+                        <span class="text-[10px] uppercase font-bold text-accent interactive-area" data-lens="true" data-key="exp1_date">Mayo — Julio 2026</span>
                     </div>
-                    <h3 class="text-xl font-extrabold uppercase mb-1 text-noir">Grupo Azotea</h3>
-                    <p class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-3">Madrid</p>
-                    <p class="text-sm font-bold mb-3 text-noir" data-key="exp1_role">Analista de Datos y Operaciones</p>
-                    <ul class="space-y-2 text-xs text-zinc-500">
+                    <h3 class="text-3xl font-extrabold uppercase mb-2 text-noir">Grupo Azotea</h3>
+                    <p class="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.2em] mb-4">Madrid</p>
+                    <p class="text-lg font-bold mb-4 text-noir" data-key="exp1_role">Analista de Datos y Operaciones</p>
+                    <ul class="space-y-3 text-sm text-zinc-500 max-w-4xl">
                         <li class="flex items-start"><span class="bullet-blue">•</span> <span data-key="exp1_b1">Diseño de dashboards e informes de gestión empresarial.</span></li>
                         <li class="flex items-start"><span class="bullet-blue">•</span> <span data-key="exp1_b2">Estructuración de la base de datos de compras y documentación interna.</span></li>
                         <li class="flex items-start"><span class="bullet-blue">•</span> <span data-key="exp1_b3">Revisión de integraciones entre softwares y corrección de inconsistencias.</span></li>
                     </ul>
                 </div>
 
-                <!-- BITE HOUSE (TIEMPO PARCIAL) -->
+                <!-- BITE HOUSE -->
                 <div class="experience-card text-reveal group">
-                    <div class="flex flex-col md:flex-row justify-between items-start mb-4 gap-3">
+                    <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-3">
                         <div class="flex items-center gap-3">
                             <div class="badge-practicas" data-key="badge_intern">Contrato de Prácticas</div>
                             <div class="badge-jornada" data-key="badge_pt">Jornada Parcial</div>
                         </div>
-                        <span class="text-[9px] uppercase font-bold text-accent interactive-area" data-lens="true" data-key="exp2_date">Enero — Abril 2026</span>
+                        <span class="text-[10px] uppercase font-bold text-accent interactive-area" data-lens="true" data-key="exp2_date">Enero — Abril 2026</span>
                     </div>
-                    <h3 class="text-xl font-extrabold uppercase mb-1 text-noir">Bite House Burger</h3>
-                    <p class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-3">Tres Cantos</p>
-                    <p class="text-sm font-bold mb-3 text-noir" data-key="exp2_role">Analista de Operaciones</p>
-                    <ul class="space-y-2 text-xs text-zinc-500">
+                    <h3 class="text-3xl font-extrabold uppercase mb-2 text-noir">Bite House Burger</h3>
+                    <p class="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.2em] mb-4">Tres Cantos</p>
+                    <p class="text-lg font-bold mb-4 text-noir" data-key="exp2_role">Analista de Operaciones</p>
+                    <ul class="space-y-3 text-sm text-zinc-500 max-w-4xl">
                         <li class="flex items-start"><span class="bullet-blue">•</span> <span data-key="exp2_b1">Implementación de flujos en n8n para reducir tiempos operativos.</span></li>
                         <li class="flex items-start"><span class="bullet-blue">•</span> <span data-key="exp2_b2">Auditoría y control de calidad en procesos operativos de cocina.</span></li>
                     </ul>
                 </div>
 
-                <!-- EL CORTE INGLÉS (TIEMPO PARCIAL) -->
+                <!-- EL CORTE INGLÉS -->
                 <div class="experience-card text-reveal group">
-                    <div class="flex flex-col md:flex-row justify-between items-start mb-4 gap-3">
+                    <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-3">
                         <div class="badge-jornada" data-key="badge_pt">Jornada Parcial</div>
-                        <span class="text-[9px] uppercase font-bold text-accent interactive-area" data-lens="true" data-key="exp3_date">Dic 2025 — Ene 2026</span>
+                        <span class="text-[10px] uppercase font-bold text-accent interactive-area" data-lens="true" data-key="exp3_date">Dic 2025 — Ene 2026</span>
                     </div>
-                    <h3 class="text-xl font-extrabold uppercase mb-1 text-noir">El Corte Inglés</h3>
-                    <p class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-3">Madrid</p>
-                    <p class="text-sm font-bold mb-3 text-noir" data-key="exp3_role">Ayudante de Cocina</p>
-                    <ul class="space-y-2 text-xs text-zinc-500 italic">
+                    <h3 class="text-3xl font-extrabold uppercase mb-2 text-noir">El Corte Inglés</h3>
+                    <p class="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.2em] mb-4">Madrid</p>
+                    <p class="text-lg font-bold mb-4 text-noir" data-key="exp3_role">Ayudante de Cocina</p>
+                    <ul class="space-y-3 text-sm text-zinc-500 italic max-w-4xl">
                         <li class="flex items-start"><span class="bullet-blue">•</span> <span data-key="exp3_b1">Preparación de mise en place y emplatado final durante la campaña de Navidad.</span></li>
                     </ul>
                 </div>
 
                 <!-- PEPE VIEIRA -->
                 <div class="experience-card text-reveal group">
-                    <div class="flex flex-col md:flex-row justify-between items-start mb-4 gap-3">
+                    <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-3">
                         <div class="flex items-center gap-3">
                             <div class="badge-practicas" data-key="badge_intern">Contrato de Prácticas</div>
                             <div class="badge-jornada" data-key="badge_ft">Jornada Completa</div>
                         </div>
-                        <span class="text-[9px] uppercase font-bold text-accent interactive-area" data-lens="true" data-key="exp4_date">Junio — Julio 2025</span>
+                        <span class="text-[10px] uppercase font-bold text-accent interactive-area" data-lens="true" data-key="exp4_date">Junio — Julio 2025</span>
                     </div>
-                    <h3 class="text-xl font-extrabold uppercase mb-1 text-noir">Pepe Vieira <span class="text-accent interactive-area" data-lens="true">** Michelin</span></h3>
-                    <p class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-3">Poio, Pontevedra</p>
-                    <p class="text-sm font-bold mb-3 text-noir" data-key="exp4_role">Auxiliar Administrativa</p>
-                    <ul class="space-y-2 text-xs text-zinc-500">
+                    <h3 class="text-3xl font-extrabold uppercase mb-2 text-noir">Pepe Vieira <span class="text-accent interactive-area" data-lens="true">** Michelin</span></h3>
+                    <p class="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.2em] mb-4">Poio, Pontevedra</p>
+                    <p class="text-lg font-bold mb-4 text-noir" data-key="exp4_role">Auxiliar Administrativa</p>
+                    <ul class="space-y-3 text-sm text-zinc-500 max-w-4xl">
                         <li class="flex items-start"><span class="bullet-blue">•</span> <span data-key="exp4_b1">Gestión integral de facturación y conciliación bancaria diaria.</span></li>
                         <li class="flex items-start"><span class="bullet-blue">•</span> <span data-key="exp4_b2">Actualización y control de inventario de una bodega con más de 400 referencias.</span></li>
                     </ul>
@@ -360,17 +360,17 @@
 
                 <!-- MARUJA LIMÓN -->
                 <div class="experience-card text-reveal group">
-                    <div class="flex flex-col md:flex-row justify-between items-start mb-4 gap-3">
+                    <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-3">
                         <div class="flex items-center gap-3">
                             <div class="badge-practicas" data-key="badge_intern">Contrato de Prácticas</div>
                             <div class="badge-jornada" data-key="badge_ft">Jornada Completa</div>
                         </div>
-                        <span class="text-[9px] uppercase font-bold text-accent interactive-area" data-lens="true" data-key="exp5_date">Julio — Agosto 2024</span>
+                        <span class="text-[10px] uppercase font-bold text-accent interactive-area" data-lens="true" data-key="exp5_date">Julio — Agosto 2024</span>
                     </div>
-                    <h3 class="text-xl font-extrabold uppercase mb-1 text-noir">Maruja Limón <span class="text-accent interactive-area" data-lens="true">* Michelin</span></h3>
-                    <p class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-3">Vigo, Pontevedra</p>
-                    <p class="text-sm font-bold mb-3 text-noir" data-key="exp5_role">Ayudante de Cocina</p>
-                    <ul class="space-y-2 text-xs text-zinc-500 italic">
+                    <h3 class="text-3xl font-extrabold uppercase mb-2 text-noir">Maruja Limón <span class="text-accent interactive-area" data-lens="true">* Michelin</span></h3>
+                    <p class="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.2em] mb-4">Vigo, Pontevedra</p>
+                    <p class="text-lg font-bold mb-4 text-noir" data-key="exp5_role">Ayudante de Cocina</p>
+                    <ul class="space-y-3 text-sm text-zinc-500 italic max-w-4xl">
                         <li class="flex items-start"><span class="bullet-blue">•</span> <span data-key="exp5_b1">Ejecución técnica de mise en place bajo estándares Michelin de alta cocina.</span></li>
                         <li class="flex items-start"><span class="bullet-blue">•</span> <span data-key="exp5_b2">Responsable del acabado y emplatado final durante el pase.</span></li>
                     </ul>
@@ -379,73 +379,73 @@
         </div>
     </section>
 
-    <!-- Sección: Formación -->
-    <section id="formacion" class="py-12 px-8 md:px-24 bg-zinc-50 scroll-mt-24">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-reveal mb-12">
+    <!-- Sección: Formación Expandida -->
+    <section id="formacion" class="py-24 px-8 md:px-12 bg-zinc-50 scroll-mt-24">
+        <div class="max-w-[90vw] mx-auto">
+            <div class="text-reveal mb-16">
                 <span class="section-label interactive-area" data-lens="true" data-key="sec_edu">Formación</span>
-                <h3 class="text-2xl md:text-3xl font-extrabold uppercase tracking-tighter mb-4 text-noir" data-key="edu_degree">Grado en Gastronomía e Innovación Culinaria</h3>
-                <div class="flex flex-wrap items-center gap-4 mb-6">
-                    <a href="https://www.maccmadrid.com/" target="_blank" class="text-lg font-bold text-accent interactive-area underline underline-offset-4" data-lens="true">Madrid Culinary Campus (MACC)</a>
-                    <span class="text-zinc-400 font-bold text-xs">2023 — 2027</span>
+                <h3 class="text-3xl md:text-5xl font-extrabold uppercase tracking-tighter mb-6 text-noir" data-key="edu_degree">Grado en Gastronomía e Innovación Culinaria</h3>
+                <div class="flex flex-wrap items-center gap-6 mb-8">
+                    <a href="https://www.maccmadrid.com/" target="_blank" class="text-xl md:text-2xl font-bold text-accent interactive-area underline underline-offset-4" data-lens="true">Madrid Culinary Campus (MACC)</a>
+                    <span class="text-zinc-400 font-bold text-sm">2023 — 2027</span>
                 </div>
-                <div class="space-y-4 max-w-3xl">
-                    <p class="text-base text-zinc-600 leading-relaxed" data-key="edu_desc1">
-                        Formación interdisciplinaria que integra la gestión y dirección de empresas del sector gastronómico y de la hostelería, combinando conocimientos teóricos con la práctica directa en cocina, la innovación y la sostenibilidad.
-                    </p>
-                </div>
+                <p class="text-lg md:text-xl text-zinc-600 leading-relaxed max-w-5xl" data-key="edu_desc1">
+                    Formación interdisciplinaria que integra la gestión y dirección de empresas del sector gastronómico y de la hostelería, combinando conocimientos teóricos con la práctica directa en cocina, la innovación y la sostenibilidad.
+                </p>
             </div>
 
-            <div class="pt-8 border-t border-zinc-200">
-                <h3 class="text-[9px] font-black uppercase tracking-[0.3em] text-accent mb-8 interactive-area" data-lens="true" data-key="sec_certs">Certificaciones</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Certificaciones en Grilla Triple -->
+            <div class="pt-12 border-t border-zinc-200">
+                <h3 class="text-[10px] font-black uppercase tracking-[0.4em] text-accent mb-10 interactive-area" data-lens="true" data-key="sec_certs">Certificaciones</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="course-card group">
                         <div>
-                            <span class="text-[8px] font-black text-zinc-400 block mb-1">2024</span>
-                            <h4 class="font-bold text-sm interactive-area text-noir" data-lens="true">Business Analytics</h4>
-                            <p class="text-[10px] text-zinc-400">Univ. Pontificia Comillas</p>
+                            <span class="text-[9px] font-black text-zinc-400 block mb-1">2024</span>
+                            <h4 class="font-bold text-base text-noir" data-key="cert1_t">Business Analytics</h4>
+                            <p class="text-xs text-zinc-400">Univ. Pontificia Comillas</p>
                         </div>
-                        <a href="https://moocs.comillas.edu/certificates/c6cdf74350864d7d93140281cf395970" target="_blank" class="text-[9px] font-black underline interactive-area" data-lens="true" data-key="btn_cert">Certificado</a>
+                        <a href="https://moocs.comillas.edu/certificates/c6cdf74350864d7d93140281cf395970" target="_blank" class="text-[10px] font-black underline" data-key="btn_cert">Certificado</a>
                     </div>
                     <div class="course-card group">
                         <div>
-                            <span class="text-[8px] font-black text-zinc-400 block mb-1">2024</span>
-                            <h4 class="font-bold text-sm interactive-area text-noir" data-lens="true">n8n + Agentes IA</h4>
-                            <p class="text-[10px] text-zinc-400">Udemy</p>
+                            <span class="text-[9px] font-black text-zinc-400 block mb-1">2024</span>
+                            <h4 class="font-bold text-base text-noir" data-key="cert2_t">n8n + Agentes IA</h4>
+                            <p class="text-xs text-zinc-400">Udemy</p>
                         </div>
-                        <a href="https://www.udemy.com/certificate/UC-c610dfac-7a0f-48b3-b60c-9b3d9fe32afe/" target="_blank" class="text-[9px] font-black underline interactive-area" data-lens="true" data-key="btn_cert">Certificado</a>
+                        <a href="https://www.udemy.com/certificate/UC-c610dfac-7a0f-48b3-b60c-9b3d9fe32afe/" target="_blank" class="text-[10px] font-black underline" data-key="btn_cert">Certificado</a>
                     </div>
                     <div class="course-card group">
                         <div>
-                            <span class="text-[8px] font-black text-zinc-400 block mb-1">2024</span>
-                            <h4 class="font-bold text-sm interactive-area text-noir" data-lens="true">MySQL a Supabase</h4>
-                            <p class="text-[10px] text-zinc-400">Udemy</p>
+                            <span class="text-[9px] font-black text-zinc-400 block mb-1">2024</span>
+                            <h4 class="font-bold text-base text-noir" data-key="cert3_t">MySQL a Supabase</h4>
+                            <p class="text-xs text-zinc-400">Udemy</p>
                         </div>
-                        <a href="https://www.udemy.com/certificate/UC-ab7d152e-166a-4748-83c0-9468c911617d/" target="_blank" class="text-[9px] font-black underline interactive-area" data-lens="true" data-key="btn_cert">Certificado</a>
+                        <a href="https://www.udemy.com/certificate/UC-ab7d152e-166a-4748-83c0-9468c911617d/" target="_blank" class="text-[10px] font-black underline" data-key="btn_cert">Certificado</a>
                     </div>
                     <div class="course-card group">
                         <div>
-                            <span class="text-[8px] font-black text-zinc-400 block mb-1">2024</span>
-                            <h4 class="font-bold text-sm interactive-area text-noir" data-lens="true">F&B Management</h4>
-                            <p class="text-[10px] text-zinc-400">Coursera</p>
+                            <span class="text-[9px] font-black text-zinc-400 block mb-1">2024</span>
+                            <h4 class="font-bold text-base text-noir" data-key="cert4_t">F&B Management</h4>
+                            <p class="text-xs text-zinc-400">Coursera</p>
                         </div>
-                        <a href="https://www.coursera.org/account/accomplishments/verify/RVHJKPA22W47" target="_blank" class="text-[9px] font-black underline interactive-area" data-lens="true" data-key="btn_cert">Certificado</a>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/RVHJKPA22W47" target="_blank" class="text-[10px] font-black underline" data-key="btn_cert">Certificado</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección: Habilidades (Restaurado a Óvalos Circulares) -->
-    <section id="habilidades" class="py-12 px-8 md:px-24 bg-white scroll-mt-24">
-        <div class="max-w-4xl mx-auto">
+    <!-- Sección: Habilidades (Ahora todos en la misma línea) -->
+    <section id="habilidades" class="py-24 px-8 md:px-12 bg-white scroll-mt-24">
+        <div class="max-w-[90vw] mx-auto">
             <span class="section-label text-reveal interactive-area" data-lens="true" data-key="sec_skills">Habilidades</span>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- AUTOMATIZACIÓN & DATOS -->
+            <!-- Grid de 3 columnas para que Idiomas esté en la misma línea que los demás -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                <!-- AUTOMATIZACIÓN -->
                 <div>
-                    <h3 class="text-[9px] font-black uppercase tracking-[0.3em] mb-6 text-zinc-400" data-key="sk_cat1">Automatización & Datos</h3>
-                    <div class="flex flex-wrap gap-3">
+                    <h3 class="text-[10px] font-black uppercase tracking-[0.4em] mb-8 text-zinc-400" data-key="sk_cat1">Automatización & Datos</h3>
+                    <div class="flex flex-wrap gap-4">
                         <span class="skill-tag-oval">n8n</span>
                         <span class="skill-tag-oval" data-key="sk_auto_2">Inteligencia artificial</span>
                         <span class="skill-tag-oval">Data Studio</span>
@@ -454,10 +454,10 @@
                     </div>
                 </div>
 
-                <!-- GESTIÓN GASTRONÓMICA -->
+                <!-- GESTIÓN -->
                 <div>
-                    <h3 class="text-[9px] font-black uppercase tracking-[0.3em] mb-6 text-zinc-400" data-key="sk_cat2">Gestión Gastronómica</h3>
-                    <div class="flex flex-wrap gap-3">
+                    <h3 class="text-[10px] font-black uppercase tracking-[0.4em] mb-8 text-zinc-400" data-key="sk_cat2">Gestión Gastronómica</h3>
+                    <div class="flex flex-wrap gap-4">
                         <span class="skill-tag-oval" data-key="sk_gast_1">Alimentación y bebidas</span>
                         <span class="skill-tag-oval" data-key="sk_gast_2">Gestión de inventarios</span>
                         <span class="skill-tag-oval" data-key="sk_gast_3">Gestión operativa</span>
@@ -466,10 +466,10 @@
                     </div>
                 </div>
 
-                <!-- IDIOMAS -->
-                <div class="md:col-span-2 pt-6">
-                    <h3 class="text-[9px] font-black uppercase tracking-[0.3em] mb-6 text-zinc-400" data-key="sk_cat3">Idiomas</h3>
-                    <div class="flex flex-wrap gap-3">
+                <!-- IDIOMAS (Mantenido en la misma línea) -->
+                <div>
+                    <h3 class="text-[10px] font-black uppercase tracking-[0.4em] mb-8 text-zinc-400" data-key="sk_cat3">Idiomas</h3>
+                    <div class="flex flex-wrap gap-4">
                         <span class="skill-tag-oval" data-key="lang1">Español (Nativo)</span>
                         <span class="skill-tag-oval" data-key="lang2">Inglés (B2+)</span>
                         <span class="skill-tag-oval" data-key="lang3">Francés (A1)</span>
@@ -479,18 +479,18 @@
         </div>
     </section>
 
-    <!-- Sección: Contacto -->
-    <footer id="contacto" class="bg-noir text-white py-12 px-8 md:px-24 border-t border-white/5 scroll-mt-24 footer-zone">
-        <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <a href="mailto:rociogarciadmgz@gmail.com" class="group flex items-center gap-3 text-lg font-medium interactive-area" data-lens="true">
+    <!-- Sección: Contacto Ancho Completo -->
+    <footer id="contacto" class="bg-noir text-white py-16 px-8 md:px-12 border-t border-white/5 scroll-mt-24 footer-zone">
+        <div class="max-w-[90vw] mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <a href="mailto:rociogarciadmgz@gmail.com" class="group flex items-center gap-4 text-2xl font-medium interactive-area" data-lens="true">
                 rociogarciadmgz@gmail.com
-                <i class="fa-solid fa-arrow-right -rotate-45 text-[10px] text-accent"></i>
+                <i class="fa-solid fa-arrow-right -rotate-45 text-xs text-accent"></i>
             </a>
-            <div class="flex items-center gap-6">
-                <a href="https://linkedin.com/in/rocio-garcia-dominguez" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 hover:bg-accent hover:text-noir transition-all border border-white/10 interactive-area" data-lens="true">
-                    <i class="fa-brands fa-linkedin-in text-base"></i>
+            <div class="flex items-center gap-10">
+                <a href="https://linkedin.com/in/rocio-garcia-dominguez" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 hover:bg-accent hover:text-noir transition-all border border-white/10 interactive-area" data-lens="true">
+                    <i class="fa-brands fa-linkedin-in text-lg"></i>
                 </a>
-                <p class="opacity-30 text-[8px] font-black uppercase tracking-[0.4em]">RG. © 2026</p>
+                <p class="opacity-30 text-[10px] font-black uppercase tracking-[0.5em]">RG. © 2026</p>
             </div>
         </div>
     </footer>
@@ -504,104 +504,58 @@
         // --- TRADUCCIONES ---
         const translations = {
             es: {
-                nav_exp: "Experiencia",
-                nav_edu: "Formación",
-                nav_skills: "Habilidades",
-                nav_contact: "Contacto",
+                nav_exp: "Experiencia", nav_edu: "Formación", nav_skills: "Habilidades", nav_contact: "Contacto",
                 hero_title: "Estudiante de Gastronomía e Innovación Culinaria.",
                 hero_profile: "Mi perfil profesional se orienta hacia la parte analítica y estratégica de la industria. Aunque cuento con alta formación y experiencia culinaria, mi objetivo es especializarme en la gestión de operaciones, el análisis de datos y la optimización y automatización de procesos para mejorar la eficiencia y la rentabilidad de los negocios de restauración.",
-                sec_exp: "Experiencia",
-                badge_intern: "Contrato de Prácticas",
-                badge_ft: "Jornada Completa",
-                badge_pt: "Jornada Parcial",
-                exp1_date: "Mayo — Julio 2026",
-                exp1_role: "Analista de Datos y Operaciones",
+                sec_exp: "Experiencia", badge_intern: "Contrato de Prácticas", badge_ft: "Jornada Completa", badge_pt: "Jornada Parcial",
+                exp1_date: "Mayo — Julio 2026", exp1_role: "Analista de Datos y Operaciones",
                 exp1_b1: "Diseño de dashboards e informes de gestión empresarial.",
                 exp1_b2: "Estructuración de la base de datos de compras y documentación interna.",
                 exp1_b3: "Revisión de integraciones entre softwares y corrección de inconsistencias.",
-                exp2_date: "Enero — Abril 2026",
-                exp2_role: "Analista de Operaciones",
+                exp2_date: "Enero — Abril 2026", exp2_role: "Analista de Operaciones",
                 exp2_b1: "Implementación de flujos en n8n para reducir tiempos operativos.",
                 exp2_b2: "Auditoría y control de calidad en procesos operativos de cocina.",
-                exp3_date: "Dic 2025 — Ene 2026",
-                exp3_role: "Ayudante de Cocina",
+                exp3_date: "Dic 2025 — Ene 2026", exp3_role: "Ayudante de Cocina",
                 exp3_b1: "Preparación de mise en place y emplatado final durante la campaña de Navidad.",
-                exp4_date: "Junio — Julio 2025",
-                exp4_role: "Auxiliar Administrativa",
+                exp4_date: "Junio — Julio 2025", exp4_role: "Auxiliar Administrativa",
                 exp4_b1: "Gestión integral de facturación y conciliación bancaria diaria.",
                 exp4_b2: "Actualización y control de inventario de una bodega con más de 400 referencias.",
-                exp5_date: "Julio — Agosto 2024",
-                exp5_role: "Ayudante de Cocina",
+                exp5_date: "Julio — Agosto 2024", exp5_role: "Ayudante de Cocina",
                 exp5_b1: "Ejecución técnica de mise en place bajo estándares Michelin de alta cocina.",
                 exp5_b2: "Responsable del acabado y emplatado final durante el pase.",
-                sec_edu: "Formación",
-                edu_degree: "Grado en Gastronomía e Innovación Culinaria",
+                sec_edu: "Formación", edu_degree: "Grado en Gastronomía e Innovación Culinaria",
                 edu_desc1: "Formación interdisciplinaria que integra la gestión y dirección de empresas del sector gastronómico y de la hostelería, combinando conocimientos teóricos con la práctica directa en cocina, la innovación y la sostenibilidad.",
-                sec_certs: "Certificaciones",
-                btn_cert: "Certificado",
-                sec_skills: "Habilidades",
-                sk_cat1: "Automatización & Datos",
-                sk_auto_2: "Inteligencia artificial",
-                sk_cat2: "Gestión Gastronómica",
-                sk_gast_1: "Alimentación y bebidas",
-                sk_gast_2: "Gestión de inventarios",
-                sk_gast_3: "Gestión operativa",
-                sk_gast_4: "Control de costes",
-                sk_gast_5: "Técnicas culinarias",
-                sk_cat3: "Idiomas",
-                lang1: "Español (Nativo)",
-                lang2: "Inglés (B2+)",
-                lang3: "Francés (A1)"
+                sec_certs: "Certificaciones", btn_cert: "Certificado",
+                sec_skills: "Habilidades", sk_cat1: "Automatización & Datos", sk_auto_2: "Inteligencia artificial",
+                sk_cat2: "Gestión Gastronómica", sk_gast_1: "Alimentación y bebidas", sk_gast_2: "Gestión de inventarios", sk_gast_3: "Gestión operativa", sk_gast_4: "Control de costes", sk_gast_5: "Técnicas culinarias",
+                sk_cat3: "Idiomas", lang1: "Español (Nativo)", lang2: "Inglés (B2+)", lang3: "Francés (A1)"
             },
             en: {
-                nav_exp: "Experience",
-                nav_edu: "Education",
-                nav_skills: "Skills",
-                nav_contact: "Contact",
+                nav_exp: "Experience", nav_edu: "Education", nav_skills: "Skills", nav_contact: "Contact",
                 hero_title: "Student of Gastronomy and Culinary Innovation.",
-                hero_profile: "My professional profile is oriented towards the industry's analytical and strategic side. Although I have high-level training and culinary experience, my goal is to specialize in operations management, data analysis, and process optimization and automation to improve efficiency and profitability in the hospitality business.",
-                sec_exp: "Experience",
-                badge_intern: "Internship Contract",
-                badge_ft: "Full Time",
-                badge_pt: "Part Time",
-                exp1_date: "May — July 2026",
-                exp1_role: "Data and Operations Analyst",
+                hero_profile: "My professional profile is oriented towards the industry's analytical and strategic side. I aim to specialize in operations management, data analysis, and process optimization and automation to improve efficiency and profitability in the hospitality business.",
+                sec_exp: "Experience", badge_intern: "Internship Contract", badge_ft: "Full Time", badge_pt: "Part Time",
+                exp1_date: "May — July 2026", exp1_role: "Data and Operations Analyst",
                 exp1_b1: "Design of dashboards and business management reports.",
                 exp1_b2: "Structuring of the purchasing database and internal documentation.",
                 exp1_b3: "Review of software integrations and correction of inconsistencies.",
-                exp2_date: "January — April 2026",
-                exp2_role: "Operations Analyst",
+                exp2_date: "January — April 2026", exp2_role: "Operations Analyst",
                 exp2_b1: "Implementation of n8n workflows to reduce operational times.",
                 exp2_b2: "Auditing and quality control in operational kitchen processes.",
-                exp3_date: "Dec 2025 — Jan 2026",
-                exp3_role: "Kitchen Assistant",
+                exp3_date: "Dec 2025 — Jan 2026", exp3_role: "Kitchen Assistant",
                 exp3_b1: "Preparation of mise en place and final plating during the Christmas campaign.",
-                exp4_date: "June — July 2025",
-                exp4_role: "Administrative Assistant",
+                exp4_date: "June — July 2025", exp4_role: "Administrative Assistant",
                 exp4_b1: "Comprehensive billing management and daily bank reconciliation.",
                 exp4_b2: "Update and control of inventory for a cellar with more than 400 references.",
-                exp5_date: "July — August 2024",
-                exp5_role: "Kitchen Assistant",
+                exp5_date: "July — August 2024", exp5_role: "Kitchen Assistant",
                 exp5_b1: "Technical execution of mise en place under Michelin standards for haute cuisine.",
                 exp5_b2: "Responsible for final finishing and plating during service.",
-                sec_edu: "Education",
-                edu_degree: "Bachelor's Degree in Gastronomy and Culinary Innovation",
-                edu_desc1: "Interdisciplinary training integrating the management and direction of companies in the gastronomic and hospitality sector, combining theoretical knowledge with direct practice in the kitchen, innovation, and sustainability.",
-                sec_certs: "Certificaciones",
-                btn_cert: "Certificate",
-                sec_skills: "Skills",
-                sk_cat1: "Automation & Data",
-                sk_auto_2: "Artificial intelligence",
-                sk_cat2: "Gastronomic Management",
-                sk_gast_1: "Food & Beverage",
-                sk_gast_2: "Inventory management",
-                sk_gast_3: "Operations management",
-                sk_gast_4: "Cost control",
-                sk_gast_5: "Culinary techniques",
-                sk_cat3: "Languages",
-                lang1: "Spanish (Native)",
-                lang2: "English (B2+)",
-                lang3: "French (A1)"
+                sec_edu: "Education", edu_degree: "Bachelor's Degree in Gastronomy and Culinary Innovation",
+                edu_desc1: "Interdisciplinary training integrating management and direction of companies in the gastronomic and hospitality sector, combining theoretical knowledge with direct practice in the kitchen, innovation, and sustainability.",
+                sec_certs: "Certificaciones", btn_cert: "Certificate",
+                sec_skills: "Skills", sk_cat1: "Automation & Data", sk_auto_2: "Artificial intelligence",
+                sk_cat2: "Gastronomic Management", sk_gast_1: "Food & Beverage", sk_gast_2: "Inventory management", sk_gast_3: "Operations management", sk_gast_4: "Cost control", sk_gast_5: "Culinary techniques",
+                sk_cat3: "Languages", lang1: "Spanish (Native)", lang2: "English (B2+)", lang3: "French (A1)"
             }
         };
 
@@ -609,22 +563,14 @@
             const elements = document.querySelectorAll('[data-key]');
             elements.forEach(el => {
                 const key = el.getAttribute('data-key');
-                if (translations[lang][key]) {
-                    el.innerText = translations[lang][key];
-                }
+                if (translations[lang][key]) el.innerText = translations[lang][key];
             });
-
             document.getElementById('btn-es').classList.toggle('active', lang === 'es');
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-
             initLens();
         }
 
-        // --- LÓGICA DE CURSOR Y LENTE ---
-        window.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
+        window.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
 
         function renderCursor() {
             cursorX += (mouseX - cursorX) * 0.2;
@@ -633,17 +579,14 @@
             cursor.style.top = `${cursorY}px`;
 
             const footerRect = footer.getBoundingClientRect();
-            if (mouseY >= footerRect.top) {
-                cursor.classList.add('cursor-white-mode');
-            } else {
-                cursor.classList.remove('cursor-white-mode');
-            }
+            if (mouseY >= footerRect.top) cursor.classList.add('cursor-white-mode');
+            else cursor.classList.remove('cursor-white-mode');
 
             document.querySelectorAll('.pink-overlay').forEach(overlay => {
                 const rect = overlay.parentElement.getBoundingClientRect();
                 const relX = mouseX - rect.left;
                 const relY = mouseY - rect.top;
-                overlay.style.clipPath = `circle(20px at ${relX}px ${relY}px)`;
+                overlay.style.clipPath = `circle(25px at ${relX}px ${relY}px)`;
             });
 
             requestAnimationFrame(renderCursor);
@@ -654,12 +597,10 @@
             document.querySelectorAll('[data-lens="true"]').forEach(el => {
                 const existing = el.querySelector('.pink-overlay');
                 if (existing) existing.remove();
-
                 const overlay = document.createElement('span');
                 overlay.className = 'pink-overlay';
                 overlay.innerText = el.innerText;
                 el.appendChild(overlay);
-
                 if (!el.dataset.listenerAdded) {
                     el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
                     el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
@@ -667,7 +608,6 @@
                 }
             });
         }
-
         initLens();
 
         const secondaryInteractives = document.querySelectorAll('.skill-tag-oval, .experience-card, .course-card, .lang-btn');
@@ -677,11 +617,8 @@
         });
 
         const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.text-reveal').forEach(el => revealObserver.observe(el));
     </script>
 </body>
