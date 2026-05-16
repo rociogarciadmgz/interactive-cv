@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rocío García | Portafolio</title>
+    <title>Rocío García</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;800&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -526,6 +526,7 @@
                 edu_desc1: "Formación interdisciplinaria que integra la gestión y dirección de empresas del sector gastronómico y de la hostelería, combinando conocimientos teóricos con la práctica directa en cocina, la innovación y la sostenibilidad.",
                 sec_certs: "Cursos y Certificaciones", btn_cert: "Certificado",
                 cert1_date: "Marzo 2026", cert2_date: "Febrero 2026", cert3_date: "Enero 2026", cert4_date: "Octubre 2025",
+                cert1_t: "Business Analytics", cert2_t: "n8n + Agentes IA", cert3_t: "MySQL a Supabase", cert4_t: "F&B Management",
                 sec_skills: "Habilidades", sk_cat1: "Automatización & Datos", sk_auto_2: "Inteligencia artificial",
                 sk_cat2: "Gestión Gastronómica", sk_fb: "Alimentación y bebidas", sk_inv: "Gestión de inventarios", sk_ops: "Gestión operativa", sk_cost: "Control de costes", sk_cul: "Técnicas culinarias",
                 sk_cat3: "Idiomas", lang1: "Español (Nativo)", lang2: "Inglés (B2+)", lang3: "Francés (A1)"
@@ -554,8 +555,9 @@
                 edu_desc1: "Interdisciplinary training integrating management and direction of companies in the gastronomic and hospitality sector, combining theoretical knowledge with direct practice in the kitchen, innovation, and sustainability.",
                 sec_certs: "Courses & Certifications", btn_cert: "Certificate",
                 cert1_date: "March 2026", cert2_date: "February 2026", cert3_date: "January 2026", cert4_date: "October 2025",
-                sec_skills: "Skills", sk_cat1: "Automation & Data", sk_auto_2: "Artificial intelligence",
-                sk_cat2: "Gastronomic Management", sk_fb: "Food & Beverage", sk_inv: "Inventory management", sk_ops: "Operations management", sk_cost: "Cost control", sk_cul: "Culinary techniques",
+                cert1_t: "Business Analytics", cert2_t: "n8n + AI Agents", cert3_t: "MySQL to Supabase", cert4_t: "F&B Management",
+                sec_skills: "Skills", sk_cat1: "Automation & Data", sk_auto_2: "Artificial Intelligence",
+                sk_cat2: "Gastronomic Management", sk_fb: "Food & Beverage", sk_inv: "Inventory Management", sk_ops: "Operations Management", sk_cost: "Cost Control", sk_cul: "Culinary Techniques",
                 sk_cat3: "Languages", lang1: "Spanish (Native)", lang2: "English (B2+)", lang3: "French (A1)"
             }
         };
@@ -564,10 +566,14 @@
             const elements = document.querySelectorAll('[data-key]');
             elements.forEach(el => {
                 const key = el.getAttribute('data-key');
-                if (translations[lang][key]) el.innerText = translations[lang][key];
+                if (translations[lang][key]) {
+                    el.innerText = translations[lang][key];
+                }
             });
+
             document.getElementById('btn-es').classList.toggle('active', lang === 'es');
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
             initLens();
         }
 
