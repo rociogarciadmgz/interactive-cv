@@ -48,7 +48,7 @@
             font-feature-settings: "pnum" on, "lnum" on;
         }
 
-        /* --- SISTEMA DE CURSOR --- */
+        /* --- STREAMING_CHUNK: Sistema de Cursor Personalizado --- */
         #cursor-container {
             position: fixed;
             top: 0; left: 0;
@@ -84,7 +84,7 @@
             border-color: #fff !important;
         }
 
-        /* --- LÓGICA DE TEXTO (AZUL Y ROSA) --- */
+        /* --- STREAMING_CHUNK: Lógica de Lente Interactiva Rosa --- */
         .interactive-area {
             position: relative;
             display: inline-block;
@@ -103,7 +103,6 @@
             color: #ff4362 !important;
             pointer-events: none;
             clip-path: circle(0px at 0px 0px);
-            white-space: nowrap;
             width: 100%;
             height: 100%;
             z-index: 10;
@@ -114,9 +113,10 @@
             font-weight: inherit;
             letter-spacing: inherit;
             line-height: inherit; 
+            text-align: inherit;
         }
 
-        /* --- COMPONENTES --- */
+        /* --- STREAMING_CHUNK: Estilos de Componentes --- */
         .badge-practicas {
             font-size: 8px;
             font-weight: 700;
@@ -256,6 +256,7 @@
                 <div class="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-[0.3em] text-accent">
                     <a href="#experiencia" class="magnetic interactive-area" data-lens="true" data-key="nav_exp">Experiencia</a>
                     <a href="#formacion" class="magnetic interactive-area" data-lens="true" data-key="nav_edu">Formación</a>
+                    <a href="#herramientas" class="magnetic interactive-area" data-lens="true" data-key="nav_tools">Herramientas</a>
                     <a href="#habilidades" class="magnetic interactive-area" data-lens="true" data-key="nav_skills">Habilidades</a>
                     <a href="#contacto" class="magnetic interactive-area underline underline-offset-4" data-lens="true" data-key="nav_contact">Contacto</a>
                 </div>
@@ -306,9 +307,9 @@
                             <div class="badge-practicas" data-key="badge_intern">Contrato de Prácticas</div>
                             <div class="badge-jornada" data-key="badge_ft">Jornada Completa</div>
                         </div>
-                        <span class="text-[10px] uppercase font-bold text-accent interactive-area" data-lens="true" data-key="exp1_date">Mayo — Julio 2026</span>
+                        <span class="text-[9px] uppercase font-bold text-accent interactive-area" data-lens="true" data-key="exp1_date">Mayo — Julio 2026</span>
                     </div>
-                    <h3 class="text-3xl font-extrabold uppercase mb-2 text-noir">Azotea Grupo</h3>
+                    <h3 class="text-3xl font-extrabold uppercase mb-2 text-noir">Grupo Azotea</h3>
                     <p class="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.2em] mb-4">Madrid</p>
                     <p class="text-lg font-bold mb-4 text-noir" data-key="exp1_role">Analista de Datos y Operaciones</p>
                     <ul class="space-y-3 text-sm text-zinc-500 max-w-5xl">
@@ -325,7 +326,7 @@
                             <div class="badge-practicas" data-key="badge_intern">Contrato de Prácticas</div>
                             <div class="badge-jornada" data-key="badge_pt">Jornada Parcial</div>
                         </div>
-                        <span class="text-[10px] uppercase font-bold text-accent interactive-area" data-lens="true" data-key="exp2_date">Enero — Abril 2026</span>
+                        <span class="text-[9px] uppercase font-bold text-accent interactive-area" data-lens="true" data-key="exp2_date">Enero — Abril 2026</span>
                     </div>
                     <h3 class="text-3xl font-extrabold uppercase mb-2 text-noir">Bite House Burger</h3>
                     <p class="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.2em] mb-4">Tres Cantos</p>
@@ -340,7 +341,7 @@
                 <div class="experience-card text-reveal group">
                     <div class="flex flex-col md:flex-row justify-between items-start mb-4 gap-3">
                         <div class="badge-jornada" data-key="badge_pt">Jornada Parcial</div>
-                        <span class="text-[10px] uppercase font-bold text-accent interactive-area" data-lens="true" data-key="exp3_date">Dic 2025 — Ene 2026</span>
+                        <span class="text-[9px] uppercase font-bold text-accent interactive-area" data-lens="true" data-key="exp3_date">Dic 2025 — Ene 2026</span>
                     </div>
                     <h3 class="text-3xl font-extrabold uppercase mb-2 text-noir">El Corte Inglés</h3>
                     <p class="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.2em] mb-4">Madrid</p>
@@ -357,7 +358,7 @@
                             <div class="badge-practicas" data-key="badge_intern">Contrato de Prácticas</div>
                             <div class="badge-jornada" data-key="badge_ft">Jornada Completa</div>
                         </div>
-                        <span class="text-[10px] uppercase font-bold text-accent interactive-area" data-lens="true" data-key="exp4_date">Junio — Julio 2025</span>
+                        <span class="text-[9px] uppercase font-bold text-accent interactive-area" data-lens="true" data-key="exp4_date">Junio — Julio 2025</span>
                     </div>
                     <h3 class="text-3xl font-extrabold uppercase mb-2 text-noir">Pepe Vieira <span class="text-accent interactive-area" data-lens="true">** Michelin</span></h3>
                     <p class="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.2em] mb-4">Poio, Pontevedra</p>
@@ -375,7 +376,7 @@
                             <div class="badge-practicas" data-key="badge_intern">Contrato de Prácticas</div>
                             <div class="badge-jornada" data-key="badge_ft">Jornada Completa</div>
                         </div>
-                        <span class="text-[10px] uppercase font-bold text-accent interactive-area" data-lens="true" data-key="exp5_date">Julio — Agosto 2024</span>
+                        <span class="text-[9px] uppercase font-bold text-accent interactive-area" data-lens="true" data-key="exp5_date">Julio — Agosto 2024</span>
                     </div>
                     <h3 class="text-3xl font-extrabold uppercase mb-2 text-noir">Maruja Limón <span class="text-accent interactive-area" data-lens="true">* Michelin</span></h3>
                     <p class="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.2em] mb-4">Vigo, Pontevedra</p>
@@ -445,8 +446,37 @@
         </div>
     </section>
 
-    <!-- Sección: Habilidades (Línea Única con 4 Grupos Distribuidos en Grid) -->
-    <section id="habilidades" class="py-24 px-8 md:px-12 bg-white scroll-mt-24">
+    <!-- Sección: Herramientas para gestión de restaurantes -->
+    <section id="herramientas" class="py-24 px-8 md:px-12 bg-white scroll-mt-24">
+        <div class="max-w-[90vw] mx-auto">
+            <span class="section-label text-reveal interactive-area" data-lens="true" data-key="sec_tools">Herramientas</span>
+            
+            <div class="experience-card text-reveal group">
+                <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-3">
+                    <div class="flex items-center gap-3">
+                        <div class="badge-practicas" data-key="tool_tag">Desarrollo Propio</div>
+                        <div class="badge-jornada" data-key="tool_status">Activo</div>
+                    </div>
+                    <span class="text-[10px] uppercase font-bold text-accent interactive-area" data-lens="true" data-key="tool_date">2026</span>
+                </div>
+                <!-- Título unificado en un solo idioma con claves independientes -->
+                <h3 class="text-3xl font-extrabold uppercase mb-2 text-noir interactive-area" data-lens="true" data-key="tool_title">Ingeniería de Menús</h3>
+                <p class="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.2em] mb-4">Web App</p>
+                <p class="text-base text-zinc-500 mb-6 max-w-5xl leading-relaxed" data-key="tool_desc">
+                    Aplicación interactiva diseñada para analizar la rentabilidad y popularidad de los platos de una carta. Clasifica el menú en base a la matriz de ingeniería de menús (Estrellas, Caballos de batalla, Rompecabezas y Perros) para optimizar los márgenes de beneficio de forma estratégica de un negocio de restauración.
+                </p>
+                <div class="flex">
+                    <a href="https://rociogarciadmgz.github.io/menu-engineering/" target="_blank" class="magnetic inline-flex items-center gap-2 px-6 py-3 bg-noir text-white text-xs font-bold uppercase tracking-wider rounded-lg hover:bg-accent hover:text-white transition-colors duration-300 shadow-sm" data-key="tool_btn">
+                        Probar Herramienta
+                        <i class="fa-solid fa-arrow-right -rotate-45 text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Habilidades (Línea Única con 4 Grupos Distribuidos en Grid sin técnicas culinarias) -->
+    <section id="habilidades" class="py-24 px-8 md:px-12 bg-zinc-50 scroll-mt-24">
         <div class="max-w-[90vw] mx-auto">
             <span class="section-label text-reveal interactive-area" data-lens="true" data-key="sec_skills">Habilidades</span>
             
@@ -463,7 +493,7 @@
                     </div>
                 </div>
 
-                <!-- GESTIÓN DE RESTAURANTES (Actualizado) -->
+                <!-- GESTIÓN DE RESTAURANTES (Sin técnicas culinarias) -->
                 <div>
                     <h3 class="text-[10px] font-black uppercase tracking-[0.4em] mb-8 text-zinc-400" data-key="sk_cat2">Gestión de Restaurantes</h3>
                     <div class="flex flex-wrap gap-4">
@@ -471,7 +501,6 @@
                         <span class="skill-tag-oval" data-key="sk_inv">Gestión de inventarios</span>
                         <span class="skill-tag-oval" data-key="sk_ops">Gestión operativa</span>
                         <span class="skill-tag-oval" data-key="sk_cost">Control de costes</span>
-                        <span class="skill-tag-oval" data-key="sk_cul">Técnicas culinarias</span>
                     </div>
                 </div>
 
@@ -519,10 +548,10 @@
         let mouseX = 0, mouseY = 0;
         let cursorX = 0, cursorY = 0;
 
-        // --- TRADUCCIONES ACTUALIZADAS ---
+        // --- TRADUCCIONES ACTUALIZADAS CON SECCIÓN DE HERRAMIENTAS ---
         const translations = {
             es: {
-                nav_exp: "Experiencia", nav_edu: "Formación", nav_skills: "Habilidades", nav_contact: "Contacto",
+                nav_exp: "Experiencia", nav_edu: "Formación", nav_tools: "Herramientas", nav_skills: "Habilidades", nav_contact: "Contacto",
                 hero_title: "Estudiante de Gastronomía e Innovación Culinaria.",
                 hero_profile: "Mi perfil profesional se orienta hacia la parte analítica y estratégica de la industria. Aunque cuento con alta formación y experiencia culinaria, mi objetivo es especializarme en la gestión de operaciones, el análisis de datos y la optimización y automatización de procesos para mejorar la eficiencia y la rentabilidad de los negocios de restauración.",
                 sec_exp: "Experiencia", badge_intern: "Contrato de Prácticas", badge_ft: "Jornada Completa", badge_pt: "Jornada Parcial",
@@ -546,8 +575,12 @@
                 sec_certs: "Cursos y Certificaciones", btn_cert: "Certificado",
                 cert1_date: "Marzo 2026", cert2_date: "Febrero 2026", cert3_date: "Enero 2026", cert4_date: "Octubre 2025",
                 cert1_t: "Business Analytics", cert2_t: "n8n + Agentes IA", cert3_t: "MySQL a Supabase", cert4_t: "F&B Management",
+                sec_tools: "Herramientas", tool_tag: "Desarrollo Propio", tool_status: "Activo", tool_date: "2026",
+                tool_title: "Ingeniería de Menús",
+                tool_desc: "Aplicación interactiva diseñada para analizar la rentabilidad y popularidad de los platos de una carta. Clasifica el menú en base a la matriz de ingeniería de menús (Estrellas, Caballos de batalla, Rompecabezas y Perros) para optimizar los márgenes de beneficio de forma estratégica de un negocio de restauración.",
+                tool_btn: "Probar Herramienta",
                 sec_skills: "Habilidades", sk_cat1: "Automatización & Datos", sk_auto_2: "Inteligencia artificial",
-                sk_cat2: "Gestión de Restaurantes", sk_fb: "Alimentación y bebidas", sk_inv: "Gestión de inventarios", sk_ops: "Gestión operativa", sk_cost: "Control de costes", sk_cul: "Técnicas culinarias",
+                sk_cat2: "Gestión de Restaurantes", sk_fb: "Alimentación y bebidas", sk_inv: "Gestión de inventarios", sk_ops: "Gestión operativa", sk_cost: "Control de costes",
                 sk_cat3: "Softwares de Gestión", sk_agora: "Ágora",
                 sk_cat4: "Idiomas", lang1: "Español (Nativo)", lang2: "Inglés (B2+)"
             },
@@ -572,12 +605,16 @@
                 exp5_b1: "Technical execution of mise en place under Michelin standards for haute cuisine.",
                 exp5_b2: "Responsible for final finishing and plating during service.",
                 sec_edu: "Education", edu_degree: "Bachelor's Degree in Gastronomy and Culinary Innovation",
-                edu_desc1: "Interdisciplinary training integrating management and direction of companies in the gastronomic and hospitality sector, combining theoretical knowledge with direct practice in the kitchen, innovation, and sustainability.",
+                edu_desc1: "Interdisciplinary training integrating the management and direction of companies in the gastronomic and hospitality sector, combining theoretical knowledge with direct practice in the kitchen, innovation, and sustainability.",
                 sec_certs: "Courses & Certifications", btn_cert: "Certificate",
                 cert1_date: "March 2026", cert2_date: "February 2026", cert3_date: "January 2026", cert4_date: "October 2025",
                 cert1_t: "Business Analytics", cert2_t: "n8n + AI Agents", cert3_t: "MySQL to Supabase", cert4_t: "F&B Management",
+                sec_tools: "Tools", tool_tag: "Own Development", tool_status: "Active", tool_date: "2026",
+                tool_title: "Menu Engineering App",
+                tool_desc: "Interactive application designed to analyze the profitability and popularity of menu items. It classifies the menu based on the menu engineering matrix (Stars, Plowhorses, Puzzles, and Dogs) to strategically optimize profit margins in a restaurant business.",
+                tool_btn: "Try Tool",
                 sec_skills: "Skills", sk_cat1: "Automation & Data", sk_auto_2: "Artificial intelligence",
-                sk_cat2: "Restaurant Management", sk_fb: "Food & Beverage", sk_inv: "Inventory management", sk_ops: "Operations management", sk_cost: "Cost control", sk_cul: "Culinary techniques",
+                sk_cat2: "Restaurant Management", sk_fb: "Food & Beverage", sk_inv: "Inventory management", sk_ops: "Operations management", sk_cost: "Cost control",
                 sk_cat3: "Management Software", sk_agora: "Agora",
                 sk_cat4: "Languages", lang1: "Spanish (Native)", lang2: "English (B2+)"
             }
@@ -587,14 +624,10 @@
             const elements = document.querySelectorAll('[data-key]');
             elements.forEach(el => {
                 const key = el.getAttribute('data-key');
-                if (translations[lang][key]) {
-                    el.innerText = translations[lang][key];
-                }
+                if (translations[lang][key]) el.innerText = translations[lang][key];
             });
-
             document.getElementById('btn-es').classList.toggle('active', lang === 'es');
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-
             initLens();
         }
 
@@ -638,7 +671,7 @@
         }
         initLens();
 
-        const secondaryInteractives = document.querySelectorAll('.skill-tag-oval, .experience-card, .course-card, .lang-btn');
+        const secondaryInteractives = document.querySelectorAll('.skill-tag-oval, .experience-card, .course-card, .lang-btn, [data-key="tool_btn"]');
         secondaryInteractives.forEach(el => {
             el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
             el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
