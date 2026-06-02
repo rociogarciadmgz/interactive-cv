@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
-  <!-- Google tag (gtag.js) -->
+<head>
+<meta charset="UTF-8">
+<!-- Modificado: Añadido maximum-scale=1.0 y user-scalable=no para evitar el zoom manual -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Rocío García — CV</title>
+
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5335L0LJL"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -9,11 +15,7 @@
 
   gtag('config', 'G-E5335L0LJL');
 </script>
-<head>
-<meta charset="UTF-8">
-<!-- Modificado: Añadido maximum-scale=1.0 y user-scalable=no para evitar el zoom manual -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Rocío García</title>
+
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -317,14 +319,21 @@ footer { background: var(--ink); color: #fff; padding: 3.5rem 2rem; border-top: 
 
 /* RESPONSIVE MÓVIL */
 @media (max-width: 600px) {
-  /* Nav simplificado */
-  .nav-inner { padding: 0.9rem 1rem; flex-direction: row; justify-content: space-between; gap: 0; }
-  .nav-right { gap: 0; }
-  .nav-links { display: none; }
+  /* Nav adaptado con scroll horizontal */
+  .nav-inner { padding: 1rem 1.25rem 0.5rem; flex-direction: column; align-items: flex-start; gap: 0.8rem; }
   .nav-logo { font-size: 1.2rem; }
+  .nav-right { width: 100%; display: flex; flex-direction: column; gap: 0; }
+  .nav-actions { position: absolute; top: 1.15rem; right: 1.25rem; }
+  .nav-links {
+    display: flex; width: 100%; overflow-x: auto; gap: 1.25rem;
+    padding-bottom: 0.4rem; -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+  .nav-links::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+  .nav-item { font-size: 0.75rem; white-space: nowrap; }
 
   /* Hero */
-  .hero { padding: 6rem 1.25rem 2.5rem; }
+  .hero { padding: 7.5rem 1.25rem 2.5rem; }
   .hero-name {
     font-size: clamp(2.8rem, 14vw, 4rem);
     white-space: normal;
