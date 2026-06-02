@@ -11,8 +11,9 @@
 </script>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rocío García - CV</title>
+<!-- Modificado: Añadido maximum-scale=1.0 y user-scalable=no para evitar el zoom manual -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Rocío García — Analista de Operaciones</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -115,9 +116,10 @@ nav {
 
 /* TICKER */
 .ticker-wrap {
-
   border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
   padding: 0.6rem 0; background: var(--white);
+  /* Modificado: Crucial para evitar que el móvil calcule un ancho infinito y achique la web */
+  overflow: hidden; 
 }
 .ticker-track { display: flex; width: max-content; animation: ticker-scroll 30s linear infinite; }
 .ticker-track span {
@@ -281,6 +283,7 @@ footer { background: var(--ink); color: #fff; padding: 3.5rem 2rem; border-top: 
 .footer-email {
   font-family: 'IBM Plex Mono', monospace; font-size: 0.95rem;
   color: var(--blue); text-decoration: none; border-bottom: 1px solid var(--blue); padding-bottom: 2px; transition: opacity 0.2s;
+  word-break: break-all; /* Previene desbordes en móviles muy pequeños */
 }
 .footer-email:hover { opacity: 0.7; }
 .footer-right { display: flex; align-items: center; gap: 1.5rem; }
