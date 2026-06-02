@@ -2,9 +2,8 @@
 <html lang="es" class="scroll-smooth">
 <head>
 <meta charset="UTF-8">
-<!-- Modificado: Añadido maximum-scale=1.0 y user-scalable=no para evitar el zoom manual -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Rocío García — CV</title>
+<title>rociogarciadmgz.</title>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5335L0LJL"></script>
@@ -28,6 +27,8 @@
   --slate: #64748b;
   --line: #e2e8f0;
   --line2: #f1f5f9;
+  /* Variable para compensar el header en los saltos (scroll) */
+  --header-height: 100px; 
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -38,6 +39,9 @@ body {
   font-family: 'IBM Plex Mono', monospace;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  /* Previene cortes de texto en móviles estrechos */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 ::-webkit-scrollbar { width: 0; }
 
@@ -85,6 +89,8 @@ nav {
 .hero {
   display: flex; flex-direction: column; justify-content: center;
   padding: 12rem 2rem 3rem;
+  /* Scroll margin para volver al inicio */
+  scroll-margin-top: var(--header-height); 
 }
 .hero-inner { max-width: 1160px; margin: 0 auto; width: 100%; }
 
@@ -120,7 +126,6 @@ nav {
 .ticker-wrap {
   border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
   padding: 0.6rem 0; background: var(--white);
-  /* Modificado: Crucial para evitar que el móvil calcule un ancho infinito y achique la web */
   overflow: hidden; 
 }
 .ticker-track { display: flex; width: max-content; animation: ticker-scroll 30s linear infinite; }
@@ -129,13 +134,17 @@ nav {
   letter-spacing: 0.15em; text-transform: uppercase;
   color: var(--blue); padding: 0 2rem; white-space: nowrap;
 }
-.ticker-track span.sep { color: var(--pink); }
+.ticker-track span.sep { color: var(--pink); padding: 0 1rem; }
 @keyframes ticker-scroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
 /* SECCIONES */
 .wrap-white { background: var(--white); }
 .wrap-soft  { background: var(--blue-light); }
-.section { max-width: 1160px; margin: 0 auto; padding: 4rem 2rem; }
+.section { 
+  max-width: 1160px; margin: 0 auto; padding: 4rem 2rem; 
+  /* ESTA ES LA CLAVE: Compensa la altura del header al hacer click en el menú */
+  scroll-margin-top: var(--header-height); 
+}
 .section-label {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 1rem; letter-spacing: 0.2em; text-transform: uppercase;
@@ -227,14 +236,20 @@ nav {
   padding: 1.1rem 1.25rem; display: flex; justify-content: space-between; align-items: center;
   border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
   text-decoration: none; background: var(--white); transition: background 0.2s;
+  /* Evita que los textos de los cursos se salgan */
+  min-width: 0; 
 }
 .cert-card:hover { background: var(--blue-light); }
 .cert-card:nth-child(even) { border-right: none; }
 .cert-card:nth-child(3), .cert-card:nth-child(4) { border-bottom: none; }
-.cert-name { font-weight: 600; font-size: 0.83rem; color: var(--ink); margin-bottom: 0.15rem; }
+.cert-name { 
+  font-weight: 600; font-size: 0.83rem; color: var(--ink); margin-bottom: 0.15rem; 
+  /* Truncar nombres de cursos muy largos si es necesario */
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
 .cert-org { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; color: var(--slate); }
 .cert-date { font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; color: var(--blue); margin-top: 0.15rem; }
-.cert-link { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; color: var(--blue); text-decoration: none; opacity: 0; transition: opacity 0.2s; }
+.cert-link { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; color: var(--blue); text-decoration: none; opacity: 0; transition: opacity 0.2s; flex-shrink: 0; margin-left: 10px; }
 .cert-card:hover .cert-link { opacity: 1; }
 
 /* HERRAMIENTA */
@@ -275,7 +290,10 @@ nav {
 .skill-tag:hover { border-color: var(--blue); background: var(--blue-light); color: var(--blue); transform: translateY(-2px); }
 
 /* FOOTER */
-footer { background: var(--ink); color: #fff; padding: 3.5rem 2rem; border-top: 1px solid #1e293b; }
+footer { 
+  background: var(--ink); color: #fff; padding: 3.5rem 2rem; border-top: 1px solid #1e293b;
+  scroll-margin-top: var(--header-height); 
+}
 .footer-inner { max-width: 1160px; margin: 0 auto; }
 .footer-contact-label {
   font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase;
@@ -303,6 +321,7 @@ footer { background: var(--ink); color: #fff; padding: 3.5rem 2rem; border-top: 
 
 /* RESPONSIVE TABLET */
 @media (max-width: 900px) {
+  :root { --header-height: 120px; } /* Header es más grande en tablet */
   .nav-inner { flex-direction: column; justify-content: center; padding: 1.5rem 1rem 1rem; gap: 1.25rem; }
   .nav-right { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
   .nav-links { flex-wrap: wrap; justify-content: center; gap: 1rem 1.5rem; }
@@ -319,6 +338,8 @@ footer { background: var(--ink); color: #fff; padding: 3.5rem 2rem; border-top: 
 
 /* RESPONSIVE MÓVIL */
 @media (max-width: 600px) {
+  :root { --header-height: 100px; } /* Ajuste altura móvil */
+  
   /* Nav adaptado con scroll horizontal */
   .nav-inner { padding: 1rem 1.25rem 0.5rem; flex-direction: column; align-items: flex-start; gap: 0.8rem; }
   .nav-logo { font-size: 1.2rem; }
@@ -349,11 +370,12 @@ footer { background: var(--ink); color: #fff; padding: 3.5rem 2rem; border-top: 
 
   /* Experiencia */
   .exp-row { padding: 1.1rem 1.1rem; }
+  .exp-top { flex-direction: column-reverse; align-items: flex-start; gap: 0.5rem; }
   .exp-company { font-size: 1.1rem; }
   .exp-company-michelin { font-size: 1.1rem; }
   .exp-role { font-size: 0.75rem; }
   .exp-bullets li { font-size: 0.73rem; }
-  .exp-date { font-size: 0.6rem; }
+  .exp-date { font-size: 0.6rem; align-self: flex-start; }
   .badge { font-size: 0.5rem; padding: 2px 6px; }
 
   /* Formación */
@@ -361,6 +383,8 @@ footer { background: var(--ink); color: #fff; padding: 3.5rem 2rem; border-top: 
   .edu-degree { font-size: 1.45rem; }
   .edu-desc { font-size: 0.82rem; }
   .certs-grid { grid-template-columns: 1fr; }
+  /* Asegura que la info del certificado no empuje fuera del límite */
+  .cert-card > div { overflow: hidden; }
 
   /* Herramientas */
   .tool-card { padding: 1.5rem; grid-template-columns: 1fr; gap: 1.25rem; }
@@ -417,24 +441,25 @@ footer { background: var(--ink); color: #fff; padding: 3.5rem 2rem; border-top: 
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span>Análisis de Datos</span><span class="sep">★</span>
-    <span>Gestión Operativa</span><span class="sep">★</span>
-    <span>n8n Workflows</span><span class="sep">★</span>
-    <span>SQL · Supabase</span><span class="sep">★</span>
-    <span>F&amp;B Management</span><span class="sep">★</span>
-    <span>Data Studio</span><span class="sep">★</span>
-    <span>Ingeniería de Menús</span><span class="sep">★</span>
-    <span>Control de Costes</span><span class="sep">★</span>
-    <span>Automatización IA</span><span class="sep">★</span>
-    <span>Análisis de Datos</span><span class="sep">★</span>
-    <span>Gestión Operativa</span><span class="sep">★</span>
-    <span>n8n Workflows</span><span class="sep">★</span>
-    <span>SQL · Supabase</span><span class="sep">★</span>
-    <span>F&amp;B Management</span><span class="sep">★</span>
-    <span>Data Studio</span><span class="sep">★</span>
-    <span>Ingeniería de Menús</span><span class="sep">★</span>
-    <span>Control de Costes</span><span class="sep">★</span>
-    <span>Automatización IA</span><span class="sep">★</span>
+    <span data-key="tk_data">Análisis de Datos</span><span class="sep">★</span>
+    <span data-key="tk_op">Gestión Operativa</span><span class="sep">★</span>
+    <span data-key="tk_n8n">n8n Workflows</span><span class="sep">★</span>
+    <span data-key="tk_sql">SQL · Supabase</span><span class="sep">★</span>
+    <span data-key="tk_fb">F&amp;B Management</span><span class="sep">★</span>
+    <span data-key="tk_ds">Data Studio</span><span class="sep">★</span>
+    <span data-key="tk_menu">Ingeniería de Menús</span><span class="sep">★</span>
+    <span data-key="tk_cost">Control de Costes</span><span class="sep">★</span>
+    <span data-key="tk_ai">Automatización IA</span><span class="sep">★</span>
+    <!-- Duplicado para la animación infinita -->
+    <span data-key="tk_data">Análisis de Datos</span><span class="sep">★</span>
+    <span data-key="tk_op">Gestión Operativa</span><span class="sep">★</span>
+    <span data-key="tk_n8n">n8n Workflows</span><span class="sep">★</span>
+    <span data-key="tk_sql">SQL · Supabase</span><span class="sep">★</span>
+    <span data-key="tk_fb">F&amp;B Management</span><span class="sep">★</span>
+    <span data-key="tk_ds">Data Studio</span><span class="sep">★</span>
+    <span data-key="tk_menu">Ingeniería de Menús</span><span class="sep">★</span>
+    <span data-key="tk_cost">Control de Costes</span><span class="sep">★</span>
+    <span data-key="tk_ai">Automatización IA</span><span class="sep">★</span>
   </div>
 </div>
 
@@ -689,6 +714,11 @@ const T = {
   es: {
     nav_exp:"Experiencia", nav_edu:"Formación", nav_tools:"Herramientas", nav_skills:"Habilidades", nav_contact:"Contacto",
     hero_bio:'Mi perfil profesional se orienta hacia la parte analítica y estratégica de la industria. Aunque cuento con alta formación y experiencia culinaria, mi objetivo es especializarme en la gestión de operaciones, el análisis de datos y la optimización y automatización de procesos para mejorar la eficiencia y la rentabilidad de los negocios de restauración.',
+    
+    // Ticker
+    tk_data:"Análisis de Datos", tk_op:"Gestión Operativa", tk_n8n:"n8n Workflows", tk_sql:"SQL · Supabase",
+    tk_fb:"F&B Management", tk_ds:"Data Studio", tk_menu:"Ingeniería de Menús", tk_cost:"Control de Costes", tk_ai:"Automatización IA",
+    
     sec_exp:"01 — Experiencia",
     exp1_role:"Analista de Datos y Operaciones", exp1_date:"May — Jul 2026",
     exp1_b1:"Diseño de dashboards e informes de gestión empresarial.",
@@ -735,6 +765,11 @@ const T = {
   en: {
     nav_exp:"Experience", nav_edu:"Education", nav_tools:"Tools", nav_skills:"Skills", nav_contact:"Contact",
     hero_bio:'My professional profile is oriented towards the analytical and strategic side of the industry. Although I have extensive culinary training and experience, my goal is to specialize in operations management, data analysis, and process optimization and automation to improve efficiency and profitability in hospitality businesses.',
+    
+    // Ticker
+    tk_data:"Data Analysis", tk_op:"Operations Management", tk_n8n:"n8n Workflows", tk_sql:"SQL · Supabase",
+    tk_fb:"F&B Management", tk_ds:"Data Studio", tk_menu:"Menu Engineering", tk_cost:"Cost Control", tk_ai:"AI Automation",
+
     sec_exp:"01 — Experience",
     exp1_role:"Data and Operations Analyst", exp1_date:"May — Jul 2026",
     exp1_b1:"Design of dashboards and business management reports.",
@@ -819,7 +854,12 @@ const sections = document.querySelectorAll('section, header, footer');
 const navItems = document.querySelectorAll('.nav-item');
 window.addEventListener('scroll', () => {
   let currentId = '';
-  sections.forEach(s => { if (scrollY >= s.offsetTop - window.innerHeight / 3) currentId = s.getAttribute('id'); });
+  sections.forEach(s => { 
+    // Añadido ajuste para que el highlight del menú coincida con el scroll-margin-top
+    if (scrollY >= s.offsetTop - 120) {
+      currentId = s.getAttribute('id'); 
+    }
+  });
   navItems.forEach(link => {
     link.classList.remove('active');
     if (link.getAttribute('href').includes(currentId) && currentId !== 'inicio') link.classList.add('active');
