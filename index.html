@@ -15,450 +15,497 @@
   gtag('config', 'G-E5335L0LJL');
 </script>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<!-- Brand book: Merriweather (titulares) · Roboto Mono (cuerpo) · IBM Plex Mono (etiquetas y cifras) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto+Mono:wght@400&family=IBM+Plex+Mono:wght@600&display=swap" rel="stylesheet">
 <style>
+/* ============ TOKENS DEL BRAND BOOK ============ */
 :root {
-  --bg: #F7F5F2;
-  --white: #ffffff;
-  --blue: #3b82f6;
-  --blue-light: #eff6ff;
-  --pink: #ff4362;
-  --ink: #050505;
-  --slate: #64748b;
-  --line: #e2e8f0;
-  --line2: #f1f5f9;
-  /* Variable para compensar el header en los saltos (scroll) */
-  --header-height: 100px; 
+  color-scheme: light;
+  /* Color */
+  --papel: #ffffff; /* fondo blanco (antes #f6f4f0) */
+  --superficie: #ffffff;
+  --linea: #e6e3dd;
+  --tinta: #121417;
+  --tinta-suave: #5c6370;
+  --azul: #3b82f6;
+  --azul-suave: #e6eefd;
+  --on-azul: #ffffff;
+  --rosa: #f0446c;
+  --rosa-suave: #fde7ec;
+  --focus-ring: 0 0 0 2px #ffffff, 0 0 0 4px #3b82f6;
+
+  /* Tipografía */
+  --f-titular: "Merriweather", Georgia, "Times New Roman", serif;
+  --f-cuerpo: "Roboto Mono", ui-monospace, Menlo, Consolas, "Courier New", monospace;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, "Courier New", monospace;
+
+  /* Espaciado (rejilla de 4px) y radios */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-6: 24px; --space-10: 40px; --space-16: 64px;
+  --radius-sm: 4px; --radius-md: 10px; --radius-lg: 20px; --radius-full: 9999px;
+
+  /* Compensa el header fijo en los saltos del menú */
+  --header-height: 100px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --papel: #111317;
+    --superficie: #191c21;
+    --linea: #2a2e35;
+    --tinta: #eceae6;
+    --tinta-suave: #a3a9b4;
+    --azul: #7aa8ff;
+    --azul-suave: #172644;
+    --on-azul: #111317;
+    --rosa: #ff8aa3;
+    --rosa-suave: #3a1620;
+    --focus-ring: 0 0 0 2px #111317, 0 0 0 4px #7aa8ff;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --papel: #111317; --superficie: #191c21; --linea: #2a2e35;
+  --tinta: #eceae6; --tinta-suave: #a3a9b4;
+  --azul: #7aa8ff; --azul-suave: #172644; --on-azul: #111317;
+  --rosa: #ff8aa3; --rosa-suave: #3a1620;
+  --focus-ring: 0 0 0 2px #111317, 0 0 0 4px #7aa8ff;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; scroll-behavior: smooth; }
 body {
-  background: var(--bg);
-  color: var(--ink);
-  font-family: 'IBM Plex Mono', monospace;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--f-cuerpo);
+  font-weight: 400;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  /* Previene cortes de texto en móviles estrechos */
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
 ::-webkit-scrollbar { width: 0; }
+a:focus-visible, button:focus-visible, .exp-row:focus-visible { outline: none; box-shadow: var(--focus-ring); }
 
-/* NAV */
+/* Estilo «etiqueta» del brand book: IBM Plex Mono 600, mayúsculas, 0.2em, azul */
+.etiqueta {
+  font-family: var(--f-mono); font-weight: 600;
+  font-size: 13px; line-height: 16px;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--azul);
+}
+
+/* ============ NAV ============ */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  background: var(--white);
-  border-bottom: 1px solid var(--line);
-  transition: all 0.3s ease;
+  background: var(--superficie);
+  border-bottom: 1px solid var(--linea);
 }
 .nav-inner {
   max-width: 1160px; margin: 0 auto;
-  padding: 1.5rem 2rem;
-  display: flex; justify-content: space-between;
-  align-items: center;
+  padding: var(--space-6) 2rem;
+  display: flex; justify-content: space-between; align-items: center;
 }
+/* Logo RG.: R en azul, G y punto en tinta, punto pegado a la G */
 .nav-logo {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 1.5rem; font-weight: 700;
-  color: var(--ink); text-decoration: none; letter-spacing: -0.03em;
+  font-family: var(--f-mono); font-weight: 600;
+  font-size: 1.5rem; letter-spacing: -0.02em;
+  color: var(--tinta); text-decoration: none;
 }
-.nav-logo span { color: var(--blue); }
+.nav-logo .r { color: var(--azul); }
+.nav-logo .dot { margin-left: -0.24em; }
 .nav-right { display: flex; align-items: center; gap: 3rem; }
 .nav-links { display: flex; gap: 2.5rem; list-style: none; margin: 0; padding: 0; }
 .nav-item {
-  font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; font-weight: 600;
-  letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue);
-  text-decoration: none; transition: color 0.2s; position: relative; padding-bottom: 6px;
+  font-family: var(--f-mono); font-weight: 600;
+  font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--azul); text-decoration: none;
+  position: relative; padding-bottom: 6px;
 }
 .nav-item::after {
   content: ''; position: absolute; bottom: 0; left: 0;
-  width: 0%; height: 2px; background: var(--blue); transition: width 0.3s ease;
+  width: 0%; height: 2px; background: var(--azul); transition: width 0.3s ease;
 }
 .nav-item:hover::after, .nav-item.active::after { width: 100%; }
-.lang-pill { display: flex; align-items: center; gap: 0.5rem; }
+.lang-pill { display: flex; align-items: center; gap: var(--space-2); }
 .lang-pill button {
   background: none; border: none; cursor: pointer;
-  font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; font-weight: 600;
-  letter-spacing: 0.1em; text-transform: uppercase; padding: 0; color: var(--slate); transition: color 0.2s;
+  font-family: var(--f-mono); font-weight: 600;
+  font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0; color: var(--tinta-suave); transition: color 0.2s;
 }
-.lang-pill button.active { color: var(--blue); }
-.lang-divider { width: 5px; height: 5px; background: var(--ink); margin: 0 0.5rem; }
+.lang-pill button.active { color: var(--azul); }
+.lang-divider { width: 1px; height: 12px; background: var(--linea); margin: 0 var(--space-1); }
 
-/* HERO */
+/* ============ HERO ============ */
 .hero {
   display: flex; flex-direction: column; justify-content: center;
-  padding: 10rem 2rem 2.5rem;
-  /* Scroll margin para volver al inicio */
-  scroll-margin-top: var(--header-height); 
-  position: relative;
-  overflow: hidden;
+  padding: 11rem 2rem var(--space-16);
+  scroll-margin-top: var(--header-height);
+  position: relative; overflow: hidden;
 }
 .hero-inner { max-width: 1160px; margin: 0 auto; width: 100%; position: relative; z-index: 2; }
 
-/* Blobs decorativos alegres */
+/* Halos: azul arriba a la derecha, rosa abajo */
 .hero-blob {
-  position: absolute; border-radius: 50%; filter: blur(50px);
-  opacity: 0.35; z-index: 1; pointer-events: none;
-  animation: blob-float 9s ease-in-out infinite;
+  position: absolute; border-radius: 50%; filter: blur(60px);
+  z-index: 1; pointer-events: none;
+  animation: blob-float 10s ease-in-out infinite;
 }
-.hero-blob.b1 { width: 260px; height: 260px; background: var(--blue); top: -80px; right: 8%; }
-.hero-blob.b2 { width: 180px; height: 180px; background: var(--pink); bottom: -60px; right: 25%; animation-delay: -3s; }
-.hero-blob.b3 { width: 120px; height: 120px; background: var(--blue); bottom: 10px; left: 4%; animation-delay: -6s; opacity: 0.2; }
+.hero-blob.b1 { width: 340px; height: 340px; background: var(--azul-suave); top: -90px; right: 6%; opacity: 0.95; }
+.hero-blob.b2 { width: 240px; height: 240px; background: var(--rosa-suave); bottom: -90px; right: 26%; opacity: 0.95; animation-delay: -4s; }
 @keyframes blob-float {
   0%, 100% { transform: translate(0,0) scale(1); }
-  50% { transform: translate(-16px, 18px) scale(1.08); }
+  50% { transform: translate(-16px, 18px) scale(1.06); }
 }
-@media (max-width: 600px) { .hero-blob { filter: blur(36px); } .hero-blob.b1 { width: 160px; height: 160px; } }
+@media (prefers-reduced-motion: reduce) { .hero-blob, .ticker-track { animation: none; } }
 
-/* Nombre con animación de entrada */
+/* Firma larga: «Rocío» en tinta + «García» en azul, Merriweather Bold */
 .hero-name {
-  font-family: 'IBM Plex Mono', monospace;
-  font-weight: 700;
-  font-size: clamp(2.8rem, 6.5vw, 5.5rem);
-  line-height: 1.15; color: var(--ink);
-  margin-bottom: 1.5rem; letter-spacing: -0.03em; white-space: nowrap;
-
+  font-family: var(--f-titular); font-weight: 700;
+  font-size: clamp(2.8rem, 6.5vw, 4.5rem); /* display = 72px */
+  line-height: 1.05; letter-spacing: -0.01em;
+  color: var(--tinta);
+  margin-bottom: var(--space-6); white-space: nowrap;
 }
 .hero-name .name-word {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(28px);
+  display: inline-block; opacity: 0; transform: translateY(28px);
   transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
 }
-.hero-name .name-word.italic { font-style: normal; color: var(--blue); margin-left: 0.3em; }
+.hero-name .name-word.italic { color: var(--azul); margin-left: 0.28em; }
 .hero-name .name-word.animate { opacity: 1; transform: translateY(0); }
 .hero-name .name-word:nth-child(2) { transition-delay: 0.12s; }
 
-.hero-divider { width: 100%; height: 1px; background: var(--line); margin: 1.5rem 0; opacity: 0; transition: opacity 0.6s ease 0.45s; }
+.hero-divider { width: 100%; height: 1px; background: var(--linea); margin: var(--space-6) 0; opacity: 0; transition: opacity 0.6s ease 0.45s; }
 .hero-divider.animate { opacity: 1; }
 
+/* Cuerpo: Roboto Mono 21/34 */
 .hero-bio {
-  font-size: 0.95rem; font-weight: 300; color: #374151; line-height: 1.8;
-  max-width: 680px;
-  opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease 0.55s, transform 0.7s ease 0.55s;
+  font-family: var(--f-cuerpo); font-weight: 400;
+  font-size: 21px; line-height: 34px; color: var(--tinta);
+  max-width: 760px;
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.7s ease 0.55s, transform 0.7s ease 0.55s;
 }
 .hero-bio.animate { opacity: 1; transform: translateY(0); }
 
-/* TICKER */
+/* ============ TICKER (tira de etiquetas con ★ rosa) ============ */
 .ticker-wrap {
-  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
-  padding: 0.6rem 0; background: var(--white);
-  overflow: hidden; 
+  border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea);
+  padding: var(--space-3) 0; background: var(--superficie); overflow: hidden;
 }
-.ticker-track { display: flex; width: max-content; animation: ticker-scroll 30s linear infinite; }
+.ticker-track { display: flex; width: max-content; animation: ticker-scroll 34s linear infinite; }
 .ticker-track span {
-  font-family: 'IBM Plex Mono', monospace; font-size: 0.63rem;
-  letter-spacing: 0.15em; text-transform: uppercase;
-  color: var(--blue); padding: 0 2rem; white-space: nowrap;
+  font-family: var(--f-mono); font-weight: 600;
+  font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--azul); padding: 0 2rem; white-space: nowrap;
 }
-.ticker-track span.sep { color: var(--pink); padding: 0 1rem; }
+.ticker-track span.sep { color: var(--rosa); padding: 0 var(--space-4); }
 @keyframes ticker-scroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-/* SECCIONES */
-.wrap-white { background: var(--white); }
-.wrap-soft  { background: var(--blue-light); }
-.section { 
-  max-width: 1160px; margin: 0 auto; padding: 3rem 2rem; 
-  /* ESTA ES LA CLAVE: Compensa la altura del header al hacer click en el menú */
-  scroll-margin-top: var(--header-height); 
+/* ============ SECCIONES (alternan papel y superficie) ============ */
+.wrap-papel { background: var(--papel); }
+.wrap-superficie { background: var(--superficie); border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea); }
+.section {
+  max-width: 1160px; margin: 0 auto; padding: var(--space-16) 2rem;
+  scroll-margin-top: var(--header-height);
 }
-.section-label {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 1rem; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--blue); display: block; margin-bottom: 1.5rem; font-weight: 700;
-}
-.section-label.pink { color: var(--pink); }
+.section-label { display: block; margin-bottom: var(--space-6); }
 
-/* EXPERIENCIA — una sola columna, fecha arriba a la derecha */
-.exp-list { display: flex; flex-direction: column; gap: 0.85rem; }
+/* ============ EXPERIENCIA ============ */
+.exp-list { display: flex; flex-direction: column; gap: var(--space-3); }
 .exp-row {
   position: relative;
-  padding: 1.4rem 1.75rem;
-  border: 1px solid var(--line);
-  border-radius: 1rem;
-  background: var(--white);
-  transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+  padding: 28px var(--space-10);
+  border: 1px solid var(--linea);
+  border-radius: var(--radius-lg);
+  background: var(--superficie);
+  transition: border-color 0.25s, transform 0.2s;
   cursor: pointer;
 }
-.exp-row:hover {
-  border-color: var(--blue);
-  box-shadow: 0 6px 20px -4px rgba(59,130,246,0.1);
-  transform: translateY(-2px);
-}
-.exp-date-wrap { display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0; }
+.exp-row:hover { border-color: var(--azul); transform: translateY(-2px); }
+.exp-date-wrap { display: flex; align-items: center; gap: var(--space-2); flex-shrink: 0; }
 .exp-chevron {
-  width: 13px; height: 13px; padding: 3px; box-sizing: border-box;
-  color: var(--blue); background: var(--blue-light);
-  border-radius: 50%; transition: transform 0.3s ease, background 0.2s ease;
+  width: 18px; height: 18px; padding: 3px; box-sizing: border-box;
+  color: var(--azul); background: var(--azul-suave);
+  border-radius: var(--radius-full);
+  transition: transform 0.3s ease, background 0.2s ease, color 0.2s ease;
   flex-shrink: 0;
 }
-.exp-row:hover .exp-chevron { background: var(--blue); color: #fff; }
+.exp-row:hover .exp-chevron { background: var(--azul); color: var(--on-azul); }
 .exp-row.open .exp-chevron { transform: rotate(180deg); }
 .exp-bullets-wrap { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.35s ease; }
 .exp-row.open .exp-bullets-wrap { grid-template-rows: 1fr; }
 .exp-bullets-inner { overflow: hidden; }
-.exp-bullets-wrap .exp-bullets { padding-top: 0.5rem; }
-.exp-hint { font-size: 0.72rem; color: var(--slate); text-align: center; margin-top: 1rem; }
+.exp-bullets-wrap .exp-bullets { padding-top: var(--space-3); }
+.exp-hint {
+  font-family: var(--f-mono); font-weight: 600; font-size: 13px; line-height: 20px;
+  color: var(--tinta-suave); text-align: center; margin-top: var(--space-6);
+}
 
-/* Fila superior: badges + fecha a la derecha */
 .exp-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 0.7rem;
-  gap: 1rem;
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: var(--space-3); gap: var(--space-4);
 }
-.exp-badges { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.exp-badges { display: flex; flex-wrap: wrap; gap: var(--space-1); }
+/* Fechas: estilo «dato» */
 .exp-date {
-  font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem;
-  letter-spacing: 0.05em; color: var(--ink); font-weight: 500; white-space: nowrap;
-  flex-shrink: 0;
+  font-family: var(--f-mono); font-weight: 600;
+  font-size: 13px; line-height: 20px;
+  color: var(--tinta-suave); white-space: nowrap; flex-shrink: 0;
 }
 
-/* Contenido principal */
+/* Nombres de empresa: Merriweather «titular» */
 .exp-company {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.25rem; line-height: 1.15; display: inline;
+  font-family: var(--f-titular); font-weight: 700;
+  font-size: 26px; line-height: 34px; color: var(--tinta); display: inline;
 }
 .exp-company-michelin {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.25rem; line-height: 1.15; color: var(--pink);
-  display: inline; margin-left: 0.5rem;
+  font-family: var(--f-mono); font-weight: 600;
+  font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--azul); display: inline-block; vertical-align: 0.3em; margin-left: var(--space-3);
 }
-.exp-company-row { margin-bottom: 0.2rem; }
+.exp-company-row { margin-bottom: var(--space-1); }
 .exp-location {
-  font-family: 'IBM Plex Mono', monospace; font-size: 0.57rem;
-  letter-spacing: 0.08em; color: var(--slate); margin-bottom: 0.3rem;
+  font-family: var(--f-mono); font-weight: 600;
+  font-size: 12px; letter-spacing: 0.08em; color: var(--tinta-suave);
+  margin-bottom: var(--space-2);
 }
-.exp-role { font-size: 0.8rem; font-weight: 600; color: var(--blue); margin-bottom: 0.45rem; }
-.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.2rem; }
+.exp-role {
+  font-family: var(--f-mono); font-weight: 600;
+  font-size: 15px; color: var(--azul); margin-bottom: var(--space-1);
+}
+/* Listas en tarjetas: «cuerpo-sm» 16/26 */
+.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: var(--space-1); }
 .exp-bullets li {
-  font-size: 0.78rem; color: var(--slate); line-height: 1.5;
-  display: flex; align-items: start; gap: 0.4rem;
+  font-family: var(--f-cuerpo); font-size: 16px; line-height: 26px;
+  color: var(--tinta-suave); display: flex; align-items: start; gap: var(--space-2);
 }
-.exp-bullets li::before { content:'·'; color:var(--blue); font-size:1.2rem; line-height:1.1; flex-shrink:0; }
+.exp-bullets li::before { content:'·'; color: var(--azul); font-weight: 700; flex-shrink: 0; }
 
+/* Chips: IBM Plex Mono 11px, radio 4px */
 .badge {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.55rem; letter-spacing: 0.05em; text-transform: uppercase;
-  padding: 3px 7px; border-radius: 4px; display: inline-block; white-space: nowrap;
+  font-family: var(--f-mono); font-weight: 600;
+  font-size: 11px; line-height: 14px; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: var(--space-1) var(--space-2); border-radius: var(--radius-sm);
+  display: inline-block; white-space: nowrap;
 }
-.badge-blue { background: var(--blue-light); color: var(--blue); }
-.badge-gray { background: var(--line2); color: var(--slate); }
+.badge-blue { background: var(--azul-suave); color: var(--azul); }
+.badge-gray { background: var(--papel); color: var(--tinta-suave); border: 1px solid var(--linea); }
 
-/* FORMACIÓN */
-.edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+/* ============ FORMACIÓN ============ */
+.edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); }
+/* Cifras: IBM Plex Mono */
 .edu-year-big {
-  font-family: 'IBM Plex Mono', monospace; font-size: 1.4rem; font-weight: 700;
-  color: var(--blue); line-height: 1; margin-bottom: 0.5rem; letter-spacing: 0.05em;
+  font-family: var(--f-mono); font-weight: 600;
+  font-size: 44px; line-height: 48px; letter-spacing: -0.02em;
+  color: var(--azul); margin-bottom: var(--space-3);
+  font-variant-numeric: tabular-nums;
 }
-.edu-school {
-  font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem;
-  letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.6rem;
-}
+.edu-school { margin-bottom: var(--space-3); display: block; }
 .edu-degree {
-  font-family: 'DM Serif Display', serif; font-size: 1.8rem; line-height: 1.2; margin-bottom: 0.9rem;
+  font-family: var(--f-titular); font-weight: 700;
+  font-size: 40px; line-height: 48px; color: var(--tinta);
+  margin-bottom: var(--space-4);
 }
-.edu-desc { font-size: 0.87rem; color: var(--slate); line-height: 1.7; }
-.certs-label {
-  font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem;
-  letter-spacing: 0.25em; text-transform: uppercase;
-  color: var(--blue); display: block; margin-bottom: 1rem;
+.edu-desc { font-family: var(--f-cuerpo); font-size: 16px; line-height: 26px; color: var(--tinta-suave); }
+.certs-label { display: block; margin-bottom: var(--space-4); }
+.certs-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--linea); border-radius: var(--radius-lg); overflow: hidden;
+  background: var(--superficie);
 }
-.certs-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); }
 .cert-card {
-  padding: 1.1rem 1.25rem; display: flex; justify-content: space-between; align-items: center;
-  border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
-  text-decoration: none; background: var(--white); transition: background 0.2s;
-  /* Evita que los textos de los cursos se salgan */
-  min-width: 0; 
+  padding: var(--space-6); display: flex; justify-content: space-between; align-items: center;
+  border-right: 1px solid var(--linea); border-bottom: 1px solid var(--linea);
+  text-decoration: none; background: var(--superficie); transition: background 0.2s;
+  min-width: 0;
 }
-.cert-card:hover { background: var(--blue-light); }
+.cert-card:hover { background: var(--azul-suave); }
 .cert-card:nth-child(even) { border-right: none; }
 .cert-card:nth-child(3), .cert-card:nth-child(4) { border-bottom: none; }
-.cert-name { 
-  font-weight: 600; font-size: 0.83rem; color: var(--ink); margin-bottom: 0.15rem; 
-  /* Truncar nombres de cursos muy largos si es necesario */
+.cert-name {
+  font-family: var(--f-titular); font-weight: 700;
+  font-size: 17px; line-height: 24px; color: var(--tinta); margin-bottom: var(--space-1);
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.cert-org { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; color: var(--slate); }
-.cert-date { font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; color: var(--blue); margin-top: 0.15rem; }
-.cert-link { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; color: var(--blue); text-decoration: none; opacity: 0; transition: opacity 0.2s; flex-shrink: 0; margin-left: 10px; }
+.cert-org { font-family: var(--f-cuerpo); font-size: 13px; line-height: 20px; color: var(--tinta-suave); }
+.cert-date { font-family: var(--f-mono); font-weight: 600; font-size: 12px; line-height: 20px; color: var(--azul); }
+.cert-link {
+  font-family: var(--f-mono); font-weight: 600; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--azul); opacity: 0; transition: opacity 0.2s; flex-shrink: 0; margin-left: var(--space-3);
+}
 .cert-card:hover .cert-link { opacity: 1; }
 
-/* HERRAMIENTA */
+/* ============ HERRAMIENTA ============ */
 .tool-card {
-  border: 1px solid var(--line); padding: 2.5rem;
-  display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center;
-  transition: border-color 0.3s, box-shadow 0.3s;
-  border-radius: 1.25rem; background: var(--white);
+  border: 1px solid var(--linea); padding: var(--space-10);
+  display: grid; grid-template-columns: 1fr auto; gap: var(--space-16); align-items: center;
+  border-radius: var(--radius-lg); background: var(--superficie);
+  transition: border-color 0.25s;
 }
-.tool-card:hover { border-color: var(--blue); box-shadow: 0 12px 32px -8px rgba(59,130,246,0.1); }
-.tool-tag { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.65rem; display: block; }
-.tool-title { font-family: 'DM Serif Display', serif; font-size: 1.9rem; margin-bottom: 0.65rem; }
-.tool-desc { font-size: 0.87rem; color: var(--slate); line-height: 1.7; max-width: 520px; }
+.tool-card:hover { border-color: var(--azul); }
+.tool-tag {
+  font-family: var(--f-mono); font-weight: 600;
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--azul); background: var(--azul-suave);
+  padding: var(--space-1) var(--space-2); border-radius: var(--radius-sm);
+  display: inline-block; margin-bottom: var(--space-4);
+}
+.tool-title {
+  font-family: var(--f-titular); font-weight: 700;
+  font-size: 40px; line-height: 48px; color: var(--tinta); margin-bottom: var(--space-4);
+}
+.tool-desc { font-family: var(--f-cuerpo); font-size: 16px; line-height: 26px; color: var(--tinta-suave); max-width: 620px; }
+/* Botón principal: relleno azul, texto on-azul, radio 10px */
 .btn-primary {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  background: var(--ink); color: #fff;
-  font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
-  padding: 0.85rem 1.6rem; text-decoration: none;
-  border: 1px solid var(--ink); border-radius: 8px;
-  transition: background 0.2s, border-color 0.2s; white-space: nowrap;
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  background: var(--azul); color: var(--on-azul);
+  font-family: var(--f-mono); font-weight: 600;
+  font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 14px var(--space-6); text-decoration: none;
+  border: 1px solid var(--azul); border-radius: var(--radius-md);
+  transition: background 0.2s, border-color 0.2s, color 0.2s; white-space: nowrap;
 }
-.btn-primary:hover { background: var(--blue); border-color: var(--blue); }
-.btn-primary svg { width: 11px; height: 11px; }
+.btn-primary:hover { background: var(--tinta); border-color: var(--tinta); color: var(--papel); }
+.btn-primary svg { width: 12px; height: 12px; }
 
-/* HABILIDADES */
-.skills-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2.5rem; }
+/* ============ HABILIDADES ============ */
+.skills-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: var(--space-10); }
 .skill-cat-label {
-  font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
-  letter-spacing: 0.18em; text-transform: uppercase; color: var(--slate); display: block; margin-bottom: 1.1rem;
+  font-family: var(--f-mono); font-weight: 600;
+  font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--tinta-suave); display: block; margin-bottom: var(--space-4);
 }
-.skill-tags { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 .skill-tag {
-  border: 1px solid var(--line); padding: 7px 16px; border-radius: 99px;
-  font-size: 0.78rem; font-weight: 500; color: var(--ink);
-  display: inline-block; background: var(--white);
-  transition: border-color 0.25s, background 0.25s, transform 0.25s; cursor: default;
+  border: 1px solid var(--linea); padding: var(--space-2) var(--space-4); border-radius: var(--radius-full);
+  font-family: var(--f-mono); font-weight: 600; font-size: 13px; line-height: 20px;
+  color: var(--tinta); display: inline-block; background: var(--superficie);
+  transition: border-color 0.2s, background 0.2s, color 0.2s, transform 0.2s; cursor: default;
 }
-.skill-tag:hover { border-color: var(--blue); background: var(--blue-light); color: var(--blue); transform: translateY(-3px) rotate(-2deg); }
-.skill-tag:nth-child(even):hover { transform: translateY(-3px) rotate(2deg); }
-.badge { transition: transform 0.2s; }
-.exp-row:hover .badge-blue { transform: rotate(-3deg); }
+.skill-tag:hover { border-color: var(--azul); background: var(--azul-suave); color: var(--azul); transform: translateY(-2px); }
 
-/* FOOTER */
-footer { 
-  background: var(--ink); color: #fff; padding: 3.5rem 2rem; border-top: 1px solid #1e293b;
-  scroll-margin-top: var(--header-height); 
+/* ============ FOOTER (cierre en papel con halo) ============ */
+footer {
+  background: var(--papel); color: var(--tinta);
+  padding: var(--space-16) 2rem;
+  border-top: 1px solid var(--linea);
+  scroll-margin-top: var(--header-height);
+  position: relative; overflow: hidden;
 }
-.footer-inner { max-width: 1160px; margin: 0 auto; }
-.footer-contact-label {
-  font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase;
-  color: rgba(255,255,255,0.4); display: block; margin-bottom: 1.5rem;
+footer::before {
+  content: ''; position: absolute; width: 300px; height: 300px; border-radius: 50%;
+  background: var(--azul-suave); filter: blur(60px); top: -120px; right: 4%; pointer-events: none;
 }
+.footer-inner { max-width: 1160px; margin: 0 auto; position: relative; z-index: 1; }
+.footer-contact-label { display: block; margin-bottom: var(--space-6); }
 .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
 .footer-email {
-  font-family: 'IBM Plex Mono', monospace; font-size: 0.95rem;
-  color: var(--blue); text-decoration: none; border-bottom: 1px solid var(--blue); padding-bottom: 2px; transition: opacity 0.2s;
-  word-break: break-all; /* Previene desbordes en móviles muy pequeños */
+  font-family: var(--f-titular); font-weight: 700;
+  font-size: clamp(1.25rem, 3vw, 2rem); line-height: 1.3;
+  color: var(--azul); text-decoration: none;
+  border-bottom: 1px solid var(--azul); padding-bottom: 2px; transition: opacity 0.2s;
+  word-break: break-all;
 }
 .footer-email:hover { opacity: 0.7; }
-.footer-right { display: flex; align-items: center; gap: 1.5rem; }
+.footer-right { display: flex; align-items: center; gap: var(--space-6); }
 .social-btn {
-  width: 42px; height: 42px; display: flex; align-items: center; justify-content: center;
-  border: 1px solid rgba(255,255,255,0.18); color: #fff; text-decoration: none;
-  border-radius: 8px; transition: border-color 0.2s, color 0.2s;
+  width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--linea); background: var(--superficie); color: var(--tinta); text-decoration: none;
+  border-radius: var(--radius-md); transition: border-color 0.2s, color 0.2s;
 }
-.social-btn:hover { border-color: var(--blue); color: var(--blue); }
-.footer-copy { font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; color: rgba(255,255,255,0.25); letter-spacing: 0.15em; text-transform: uppercase; }
+.social-btn:hover { border-color: var(--azul); color: var(--azul); }
+.footer-copy {
+  font-family: var(--f-mono); font-weight: 600;
+  font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--tinta-suave);
+}
+.footer-copy .r { color: var(--azul); }
 
-/* REVEAL */
+/* ============ REVEAL ============ */
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.visible { opacity: 1; transform: none; }
 
-/* CURSOR BURBUJA */
+/* ============ CURSOR ============ */
 @media (hover: hover) and (pointer: fine) {
   body { cursor: none; }
   a, button, .exp-row, .skill-tag { cursor: none; }
 }
 .cursor-bubble {
-  position: fixed; top: 0; left: 0;
-  width: 20px; height: 20px;
-  color: var(--blue);
-  pointer-events: none; z-index: 9999;
-  transform: translate(-3px,-3px);
-  transition: color 0.2s ease;
-  opacity: 0;
-  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.15));
+  position: fixed; top: 0; left: 0; width: 20px; height: 20px;
+  color: var(--azul); pointer-events: none; z-index: 9999;
+  transform: translate(-3px,-3px); transition: color 0.2s ease; opacity: 0;
 }
 .cursor-bubble svg { display: block; }
 .cursor-bubble.show { opacity: 1; }
-.cursor-bubble.hover {
-  color: var(--pink);
-}
+.cursor-bubble.hover { color: var(--tinta); }
 
-/* RESPONSIVE TABLET */
+/* ============ TABLET ============ */
 @media (max-width: 900px) {
-  :root { --header-height: 120px; } /* Header es más grande en tablet */
-  .nav-inner { flex-direction: column; justify-content: center; padding: 1.5rem 1rem 1rem; gap: 1.25rem; }
+  :root { --header-height: 120px; }
+  .nav-inner { flex-direction: column; justify-content: center; padding: var(--space-6) var(--space-4) var(--space-4); gap: 1.25rem; }
   .nav-right { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
   .nav-links { flex-wrap: wrap; justify-content: center; gap: 1rem 1.5rem; }
-  .edu-grid { grid-template-columns: 1fr; }
+  .edu-grid { grid-template-columns: 1fr; gap: var(--space-10); }
   .skills-grid { grid-template-columns: 1fr 1fr; }
-  .tool-card { grid-template-columns: 1fr; gap: 1.5rem; }
+  .tool-card { grid-template-columns: 1fr; gap: var(--space-6); }
   .footer-row { flex-direction: column; align-items: flex-start; }
   .certs-grid { grid-template-columns: 1fr; }
   .cert-card { border-right: none !important; }
-  .cert-card:nth-child(n) { border-bottom: 1px solid var(--line); }
+  .cert-card:nth-child(n) { border-bottom: 1px solid var(--linea); }
   .cert-card:last-child { border-bottom: none; }
   .cert-link { opacity: 1; }
 }
 
-/* RESPONSIVE MÓVIL */
+/* ============ MÓVIL ============ */
 @media (max-width: 600px) {
-  :root { --header-height: 100px; } /* Ajuste altura móvil */
-  
-  /* Nav adaptado con scroll horizontal */
-  .nav-inner { padding: 1rem 1.25rem 0.5rem; flex-direction: column; align-items: flex-start; gap: 0.8rem; }
-  .nav-logo { font-size: 1.2rem; }
+  :root { --header-height: 100px; }
+  .nav-inner { padding: var(--space-4) 1.25rem var(--space-2); flex-direction: column; align-items: flex-start; gap: var(--space-3); }
+  .nav-logo { font-size: 1.25rem; }
   .nav-right { width: 100%; display: flex; flex-direction: column; gap: 0; }
   .nav-actions { position: absolute; top: 1.15rem; right: 1.25rem; }
   .nav-links {
     display: flex; width: 100%; overflow-x: auto; gap: 1.25rem;
-    padding-bottom: 0.4rem; -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
+    flex-wrap: nowrap; justify-content: flex-start;
+    padding-bottom: 0.4rem; -webkit-overflow-scrolling: touch; scrollbar-width: none;
   }
-  .nav-links::-webkit-scrollbar { display: none; } /* Chrome/Safari */
-  .nav-item { font-size: 0.75rem; white-space: nowrap; }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-item { white-space: nowrap; }
 
-  /* Hero */
-  .hero { padding: 7.5rem 1.25rem 2.5rem; }
-  .hero-name {
-    font-size: clamp(2.8rem, 14vw, 4rem);
-    white-space: normal;
-    line-height: 1.05;
-    margin-bottom: 1.2rem;
-  }
-  .hero-bio { font-size: 0.9rem; line-height: 1.7; }
-  .hero-divider { margin: 1.2rem 0; }
+  .hero { padding: 8rem 1.25rem var(--space-10); }
+  .hero-name { font-size: clamp(2.6rem, 13vw, 3.6rem); white-space: normal; margin-bottom: var(--space-4); }
+  .hero-name .name-word.italic { margin-left: 0; display: block; }
+  .hero-bio { font-size: 17px; line-height: 28px; }
+  .hero-divider { margin: var(--space-4) 0; }
+  .hero-blob.b1 { width: 200px; height: 200px; }
+  .hero-blob.b2 { width: 160px; height: 160px; }
 
-  /* Secciones */
-  .section { padding: 2.5rem 1.25rem; }
-  .section-label { font-size: 0.8rem; margin-bottom: 1.5rem; }
+  .section { padding: var(--space-10) 1.25rem; }
 
-  /* Experiencia */
-  .exp-row { padding: 1.1rem 1.1rem; }
-  .exp-top { flex-direction: row; justify-content: space-between; align-items: flex-start; gap: 0.5rem; }
+  .exp-row { padding: var(--space-6) 20px; }
+  .exp-top { gap: var(--space-2); }
   .exp-date-wrap { margin-left: auto; }
-  .exp-company { font-size: 1.1rem; }
-  .exp-company-michelin { font-size: 1.1rem; }
-  .exp-role { font-size: 0.75rem; }
-  .exp-bullets li { font-size: 0.73rem; }
-  .exp-date { font-size: 0.6rem; }
-  .badge { font-size: 0.5rem; padding: 2px 6px; }
+  .exp-company { font-size: 21px; line-height: 28px; }
+  .exp-company-michelin { margin-left: var(--space-2); font-size: 11px; }
+  .exp-role { font-size: 14px; }
+  .exp-bullets li { font-size: 14px; line-height: 22px; }
+  .exp-date { font-size: 12px; }
+  .badge { font-size: 10px; }
 
-  /* Formación */
-  .edu-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .edu-degree { font-size: 1.45rem; }
-  .edu-desc { font-size: 0.82rem; }
-  .certs-grid { grid-template-columns: 1fr; }
-  /* Asegura que la info del certificado no empuje fuera del límite */
+  .edu-year-big { font-size: 34px; line-height: 40px; }
+  .edu-degree { font-size: 28px; line-height: 36px; }
   .cert-card > div { overflow: hidden; }
 
-  /* Herramientas */
-  .tool-card { padding: 1.5rem; grid-template-columns: 1fr; gap: 1.25rem; }
-  .tool-title { font-size: 1.5rem; }
-  .tool-desc { font-size: 0.82rem; }
+  .tool-card { padding: var(--space-6); }
+  .tool-title { font-size: 28px; line-height: 36px; }
 
-  /* Habilidades */
-  .skills-grid { grid-template-columns: 1fr; gap: 1.75rem; }
-  .skill-tag { font-size: 0.72rem; padding: 6px 13px; }
+  .skills-grid { grid-template-columns: 1fr; gap: var(--space-6); }
 
-  /* Footer */
-  .footer-row { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
-  .footer-email { font-size: 0.8rem; }
-  footer { padding: 2.5rem 1.25rem; }
+  footer { padding: var(--space-10) 1.25rem; }
+  .footer-row { gap: var(--space-6); }
 }
 </style>
 </head>
@@ -471,7 +518,7 @@ footer {
 <!-- NAV -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="#inicio" class="nav-logo"><span>R</span>G.</a>
+    <a href="#inicio" class="nav-logo" aria-label="RG. — Inicio"><span class="r">R</span>G<span class="dot">.</span></a>
     <div class="nav-right">
       <ul class="nav-links">
         <li><a href="#experiencia" class="nav-item" data-key="nav_exp">Experiencia</a></li>
@@ -495,7 +542,6 @@ footer {
 <header class="hero" id="inicio">
   <div class="hero-blob b1"></div>
   <div class="hero-blob b2"></div>
-  <div class="hero-blob b3"></div>
   <div class="hero-inner">
     <h1 class="hero-name">
       <span class="name-word" id="name-first">Rocío</span><span class="name-word italic" id="name-last">García</span>
@@ -516,11 +562,11 @@ footer {
     <span data-key="tk_ds">Data Studio</span><span class="sep">★</span>
     <span data-key="tk_menu">Ingeniería de Menús</span><span class="sep">★</span>
     <span data-key="tk_cost">Control de Costes</span><span class="sep">★</span>
-    <span data-key="tk_ai">Inteligencia Aritificial</span><span class="sep">★</span>
+    <span data-key="tk_ai">Inteligencia Artificial</span><span class="sep">★</span>
     <!-- Duplicado para la animación infinita -->
     <span data-key="tk_data">Análisis de Datos</span><span class="sep">★</span>
     <span data-key="tk_op">Gestión Operativa</span><span class="sep">★</span>
-    <span data-key="tk_n8n">n8N</span><span class="sep">★</span>
+    <span data-key="tk_n8n">n8n</span><span class="sep">★</span>
     <span data-key="tk_sql">SQL · Supabase</span><span class="sep">★</span>
     <span data-key="tk_fb">F&amp;B Management</span><span class="sep">★</span>
     <span data-key="tk_ds">Data Studio</span><span class="sep">★</span>
@@ -531,10 +577,10 @@ footer {
 </div>
 
 <!-- EXPERIENCIA -->
-<div class="wrap-white">
+<div class="wrap-papel">
 <section id="experiencia" class="section">
   <div class="reveal">
-    <span class="section-label" data-key="sec_exp">01 — Experiencia</span>
+    <span class="section-label etiqueta" data-key="sec_exp">01 — Experiencia</span>
   </div>
   <div class="exp-list">
 
@@ -545,7 +591,7 @@ footer {
           <span class="badge badge-blue" data-key="badge_intern0">Prácticas</span>
           <span class="badge badge-gray" data-key="badge_pt0">Jornada Parcial</span>
         </div>
-        <div class="exp-date-wrap"><span class="exp-date" data-key="exp0_date">Jul 2026 — Actualidad</span><svg class="exp-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 7.5l5 5 5-5"/></svg></div>
+        <div class="exp-date-wrap"><span class="exp-date" data-key="exp0_date">Jul 2026 — Actualidad</span><svg class="exp-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 7.5l5 5 5-5"/></svg></div>
       </div>
       <div class="exp-company-row">
         <span class="exp-company">The Restaurant Data Company</span>
@@ -568,7 +614,7 @@ footer {
           <span class="badge badge-blue" data-key="badge_intern">Prácticas</span>
           <span class="badge badge-gray" data-key="badge_ft">Jornada Completa</span>
         </div>
-        <div class="exp-date-wrap"><span class="exp-date" data-key="exp1_date">May — Jul 2026</span><svg class="exp-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 7.5l5 5 5-5"/></svg></div>
+        <div class="exp-date-wrap"><span class="exp-date" data-key="exp1_date">May — Jul 2026</span><svg class="exp-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 7.5l5 5 5-5"/></svg></div>
       </div>
       <div class="exp-company-row">
         <span class="exp-company">Azotea Grupo</span>
@@ -591,7 +637,7 @@ footer {
           <span class="badge badge-blue" data-key="badge_intern2">Prácticas</span>
           <span class="badge badge-gray" data-key="badge_pt">Jornada Parcial</span>
         </div>
-        <div class="exp-date-wrap"><span class="exp-date" data-key="exp2_date">Ene — Abr 2026</span><svg class="exp-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 7.5l5 5 5-5"/></svg></div>
+        <div class="exp-date-wrap"><span class="exp-date" data-key="exp2_date">Ene — Abr 2026</span><svg class="exp-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 7.5l5 5 5-5"/></svg></div>
       </div>
       <div class="exp-company-row">
         <span class="exp-company">Bite House Burger</span>
@@ -612,7 +658,7 @@ footer {
         <div class="exp-badges">
           <span class="badge badge-gray" data-key="badge_pt2">Jornada Parcial</span>
         </div>
-        <div class="exp-date-wrap"><span class="exp-date" data-key="exp3_date">Dic 2025 — Ene 2026</span><svg class="exp-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 7.5l5 5 5-5"/></svg></div>
+        <div class="exp-date-wrap"><span class="exp-date" data-key="exp3_date">Dic 2025 — Ene 2026</span><svg class="exp-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 7.5l5 5 5-5"/></svg></div>
       </div>
       <div class="exp-company-row">
         <span class="exp-company">El Corte Inglés</span>
@@ -633,7 +679,7 @@ footer {
           <span class="badge badge-blue" data-key="badge_intern3">Prácticas</span>
           <span class="badge badge-gray" data-key="badge_ft2">Jornada Completa</span>
         </div>
-        <div class="exp-date-wrap"><span class="exp-date" data-key="exp4_date">Jun — Jul 2025</span><svg class="exp-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 7.5l5 5 5-5"/></svg></div>
+        <div class="exp-date-wrap"><span class="exp-date" data-key="exp4_date">Jun — Jul 2025</span><svg class="exp-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 7.5l5 5 5-5"/></svg></div>
       </div>
       <div class="exp-company-row">
         <span class="exp-company">Pepe Vieira</span><span class="exp-company-michelin" data-key="exp4_michelin">★★ Michelin</span>
@@ -655,7 +701,7 @@ footer {
           <span class="badge badge-blue" data-key="badge_intern4">Prácticas</span>
           <span class="badge badge-gray" data-key="badge_ft3">Jornada Completa</span>
         </div>
-        <div class="exp-date-wrap"><span class="exp-date" data-key="exp5_date">Jul — Ago 2024</span><svg class="exp-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 7.5l5 5 5-5"/></svg></div>
+        <div class="exp-date-wrap"><span class="exp-date" data-key="exp5_date">Jul — Ago 2024</span><svg class="exp-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 7.5l5 5 5-5"/></svg></div>
       </div>
       <div class="exp-company-row">
         <span class="exp-company">Maruja Limón</span><span class="exp-company-michelin" data-key="exp5_michelin">★ Michelin</span>
@@ -676,20 +722,20 @@ footer {
 </div>
 
 <!-- FORMACIÓN -->
-<div class="wrap-soft">
+<div class="wrap-superficie">
 <section id="formacion" class="section">
   <div class="reveal">
-    <span class="section-label pink" data-key="sec_edu">02 — Formación</span>
+    <span class="section-label etiqueta" data-key="sec_edu">02 — Formación</span>
   </div>
   <div class="edu-grid reveal">
     <div>
       <div class="edu-year-big">2023—2027</div>
-      <p class="edu-school">Madrid Culinary Campus (MACC)</p>
+      <p class="edu-school etiqueta">Madrid Culinary Campus (MACC)</p>
       <h3 class="edu-degree" data-key="edu_degree">Grado en Gastronomía e Innovación Culinaria</h3>
       <p class="edu-desc" data-key="edu_desc1">Formación interdisciplinaria que integra la gestión y dirección de empresas del sector gastronómico y de la hostelería, combinando conocimientos teóricos con la práctica directa en cocina, la innovación y la sostenibilidad.</p>
     </div>
     <div>
-      <span class="certs-label" data-key="sec_certs">Cursos y Certificaciones</span>
+      <span class="certs-label etiqueta" data-key="sec_certs">Cursos y Certificaciones</span>
       <div class="certs-grid">
         <a href="https://moocs.comillas.edu/certificates/c6cdf74350864d7d93140281cf395970" target="_blank" class="cert-card">
           <div>
@@ -730,10 +776,10 @@ footer {
 </div>
 
 <!-- HERRAMIENTA -->
-<div class="wrap-white">
+<div class="wrap-papel">
 <section id="herramientas" class="section">
   <div class="reveal">
-    <span class="section-label" data-key="sec_tools">03 — Herramientas</span>
+    <span class="section-label etiqueta" data-key="sec_tools">03 — Herramientas</span>
   </div>
   <div class="tool-card reveal">
     <div>
@@ -750,10 +796,10 @@ footer {
 </div>
 
 <!-- HABILIDADES -->
-<div class="wrap-soft">
+<div class="wrap-superficie">
 <section id="habilidades" class="section">
   <div class="reveal">
-    <span class="section-label pink" data-key="sec_skills">04 — Habilidades</span>
+    <span class="section-label etiqueta" data-key="sec_skills">04 — Habilidades</span>
   </div>
   <div class="skills-grid">
     <div class="reveal">
@@ -798,14 +844,14 @@ footer {
 <!-- FOOTER -->
 <footer id="contacto">
   <div class="footer-inner">
-    <span class="footer-contact-label" data-key="footer_label">Contacto</span>
+    <span class="footer-contact-label etiqueta" data-key="footer_label">Contacto</span>
     <div class="footer-row">
       <a href="mailto:rociogarciadmgz@gmail.com" class="footer-email" id="footer-email" onclick="copyEmail(event)">rociogarciadmgz@gmail.com</a>
       <div class="footer-right">
         <a href="https://linkedin.com/in/rocio-garcia-dominguez" target="_blank" class="social-btn" aria-label="LinkedIn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
-        <span class="footer-copy">RG. © 2026</span>
+        <span class="footer-copy"><span class="r">R</span>G. © 2026</span>
       </div>
     </div>
   </div>
@@ -816,11 +862,11 @@ const T = {
   es: {
     nav_exp:"Experiencia", nav_edu:"Formación", nav_tools:"Herramientas", nav_skills:"Habilidades", nav_contact:"Contacto",
     hero_bio:'Mi perfil profesional se orienta hacia la parte analítica y estratégica de la industria. Aunque cuento con alta formación y experiencia culinaria, mi objetivo es especializarme en la gestión de operaciones, el análisis de datos y la optimización y automatización de procesos para mejorar la eficiencia y la rentabilidad de los negocios de restauración.',
-    
+
     // Ticker
     tk_data:"Análisis de Datos", tk_op:"Gestión Operativa", tk_n8n:"n8n", tk_sql:"SQL · Supabase",
     tk_fb:"F&B Management", tk_ds:"Data Studio", tk_menu:"Ingeniería de Menús", tk_cost:"Control de Costes", tk_ai:"Inteligencia Artificial",
-    
+
     sec_exp:"01 — Experiencia",
     exp_hint:"Toca cualquier experiencia para ver los detalles ↑",
     exp0_role:"Analista de Datos y Producto", exp0_date:"Jul 2026 — Actualidad",
@@ -833,7 +879,7 @@ const T = {
     exp1_b2:"Estructuración de la base de datos de compras y documentación interna.",
     exp1_b3:"Revisión de integraciones entre softwares y corrección de inconsistencias.",
     badge_intern:"Prácticas", badge_ft:"Jornada Completa",
-    exp2_role:"Analista de Operaciones", exp2_date:"Ene — Abr 2026",
+    exp2_role:"Automatización y Operaciones", exp2_date:"Ene — Abr 2026",
     exp2_b1:"Implementación de flujos en n8n para reducir tiempos operativos.",
     exp2_b2:"Auditoría y control de calidad en procesos operativos de cocina.",
     badge_intern2:"Prácticas", badge_pt:"Jornada Parcial",
@@ -873,7 +919,7 @@ const T = {
   en: {
     nav_exp:"Experience", nav_edu:"Education", nav_tools:"Tools", nav_skills:"Skills", nav_contact:"Contact",
     hero_bio:'My professional profile is oriented towards the analytical and strategic side of the industry. Although I have extensive culinary training and experience, my goal is to specialize in operations management, data analysis, and process optimization and automation to improve efficiency and profitability in hospitality businesses.',
-    
+
     // Ticker
     tk_data:"Data Analysis", tk_op:"Operations Management", tk_n8n:"n8n", tk_sql:"SQL · Supabase",
     tk_fb:"F&B Management", tk_ds:"Data Studio", tk_menu:"Menu Engineering", tk_cost:"Cost Control", tk_ai:"Artificial Intelligence",
@@ -952,10 +998,10 @@ function copyEmail(e) {
 
 function setLang(lang) {
   currentLang = lang;
+  document.documentElement.lang = lang;
   document.querySelectorAll('[data-key]').forEach(el => {
     const k = el.getAttribute('data-key');
     if (T[lang][k] === undefined) return;
-    if (k === 'hero_bio') { el.textContent = T[lang][k]; return; }
     el.textContent = T[lang][k];
   });
   document.getElementById('btn-es').classList.toggle('active', lang === 'es');
@@ -987,11 +1033,8 @@ const sections = document.querySelectorAll('section, header, footer');
 const navItems = document.querySelectorAll('.nav-item');
 window.addEventListener('scroll', () => {
   let currentId = '';
-  sections.forEach(s => { 
-    // Añadido ajuste para que el highlight del menú coincida con el scroll-margin-top
-    if (scrollY >= s.offsetTop - 120) {
-      currentId = s.getAttribute('id'); 
-    }
+  sections.forEach(s => {
+    if (scrollY >= s.offsetTop - 120) currentId = s.getAttribute('id');
   });
   navItems.forEach(link => {
     link.classList.remove('active');
@@ -999,18 +1042,15 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Cursor burbuja transparente
+// Cursor personalizado
 (function() {
   if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
   const bubble = document.getElementById('cursorBubble');
   if (!bubble) return;
-  let mouseX = 0, mouseY = 0, curX = 0, curY = 0;
-  let started = false;
-  let scale = 1;
+  let mouseX = 0, mouseY = 0, scale = 1;
 
   window.addEventListener('mousemove', (e) => {
     mouseX = e.clientX; mouseY = e.clientY;
-    if (!started) { curX = mouseX; curY = mouseY; started = true; }
     bubble.classList.add('show');
   });
   window.addEventListener('mouseleave', () => bubble.classList.remove('show'));
@@ -1018,9 +1058,7 @@ window.addEventListener('scroll', () => {
   window.addEventListener('mouseup', () => { scale = 1; });
 
   function raf() {
-    curX = mouseX;
-    curY = mouseY;
-    bubble.style.transform = `translate(${curX - 3}px, ${curY - 3}px) scale(${scale})`;
+    bubble.style.transform = `translate(${mouseX - 3}px, ${mouseY - 3}px) scale(${scale})`;
     requestAnimationFrame(raf);
   }
   raf();
