@@ -131,7 +131,7 @@ nav {
   animation: blob-float 10s ease-in-out infinite;
 }
 .hero-blob.b1 { width: 340px; height: 340px; background: var(--azul-suave); top: -90px; right: 6%; opacity: 0.95; }
-.hero-blob.b2 { width: 240px; height: 240px; background: var(--rosa-suave); bottom: -90px; right: 26%; opacity: 0.95; animation-delay: -4s; }
+.hero-blob.b2 { width: 220px; height: 220px; background: var(--rosa); bottom: -70px; right: 25%; opacity: 0.35; animation-delay: -4s; }
 @keyframes blob-float {
   0%, 100% { transform: translate(0,0) scale(1); }
   50% { transform: translate(-16px, 18px) scale(1.06); }
@@ -189,6 +189,7 @@ nav {
   scroll-margin-top: var(--header-height);
 }
 .section-label { display: block; margin-bottom: var(--space-6); }
+.section-label.pink { color: var(--rosa); }
 
 /* ============ EXPERIENCIA ============ */
 .exp-list { display: flex; flex-direction: column; gap: var(--space-3); }
@@ -239,9 +240,9 @@ nav {
   font-size: 26px; line-height: 34px; color: var(--tinta); display: inline;
 }
 .exp-company-michelin {
-  font-family: var(--f-mono); font-weight: 600;
-  font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--azul); display: inline-block; vertical-align: 0.3em; margin-left: var(--space-3);
+  font-family: var(--f-titular); font-weight: 700;
+  font-size: 26px; line-height: 34px;
+  color: var(--rosa); display: inline; margin-left: var(--space-2);
 }
 .exp-company-row { margin-bottom: var(--space-1); }
 .exp-location {
@@ -416,7 +417,7 @@ footer::before {
 }
 .cursor-bubble svg { display: block; }
 .cursor-bubble.show { opacity: 1; }
-.cursor-bubble.hover { color: var(--tinta); }
+.cursor-bubble.hover { color: var(--rosa); }
 
 /* ============ TABLET ============ */
 @media (max-width: 900px) {
@@ -464,7 +465,7 @@ footer::before {
   .exp-top { gap: var(--space-2); }
   .exp-date-wrap { margin-left: auto; }
   .exp-company { font-size: 21px; line-height: 28px; }
-  .exp-company-michelin { margin-left: var(--space-2); font-size: 11px; }
+  .exp-company-michelin { font-size: 21px; line-height: 28px; }
   .exp-role { font-size: 14px; }
   .exp-bullets li { font-size: 14px; line-height: 22px; }
   .exp-date { font-size: 12px; }
@@ -700,7 +701,7 @@ footer::before {
 <div class="wrap-superficie">
 <section id="formacion" class="section">
   <div class="reveal">
-    <span class="section-label etiqueta" data-key="sec_edu">02 — Formación</span>
+    <span class="section-label etiqueta pink" data-key="sec_edu">02 — Formación</span>
   </div>
   <div class="edu-grid reveal">
     <div>
@@ -774,7 +775,7 @@ footer::before {
 <div class="wrap-superficie">
 <section id="habilidades" class="section">
   <div class="reveal">
-    <span class="section-label etiqueta" data-key="sec_skills">04 — Habilidades</span>
+    <span class="section-label etiqueta pink" data-key="sec_skills">04 — Habilidades</span>
   </div>
   <div class="skills-grid">
     <div class="reveal">
