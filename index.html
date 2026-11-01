@@ -24,7 +24,7 @@
 :root {
   color-scheme: light;
   /* Color */
-  --papel: #ffffff; /* fondo blanco (antes #f6f4f0) */
+  --papel: #ffffff;
   --superficie: #ffffff;
   --linea: #e6e3dd;
   --tinta: #121417;
@@ -93,7 +93,7 @@ nav {
 .nav-logo .r { color: var(--azul); }
 .nav-logo .dot { margin-left: -0.24em; }
 .nav-right { display: flex; align-items: center; gap: 3rem; }
-.nav-links { display: flex; gap: 2.5rem; list-style: none; margin: 0; padding: 0; }
+.nav-links { display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; }
 .nav-item {
   font-family: var(--f-mono); font-weight: 600;
   font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
@@ -124,7 +124,7 @@ nav {
 }
 .hero-inner { max-width: 1160px; margin: 0 auto; width: 100%; position: relative; z-index: 2; }
 
-/* Halos: azul arriba a la derecha, rosa abajo */
+/* Halos */
 .hero-blob {
   position: absolute; border-radius: 50%; filter: blur(60px);
   z-index: 1; pointer-events: none;
@@ -138,10 +138,10 @@ nav {
 }
 @media (prefers-reduced-motion: reduce) { .hero-blob, .ticker-track { animation: none; } }
 
-/* Firma larga: «Rocío» en tinta + «García» en azul, Merriweather Bold */
+/* Firma larga */
 .hero-name {
   font-family: var(--f-titular); font-weight: 700;
-  font-size: clamp(2.8rem, 6.5vw, 4.5rem); /* display = 72px */
+  font-size: clamp(2.8rem, 6.5vw, 4.5rem);
   line-height: 1.05; letter-spacing: -0.01em;
   color: var(--tinta);
   margin-bottom: var(--space-6); white-space: nowrap;
@@ -157,7 +157,6 @@ nav {
 .hero-divider { width: 100%; height: 1px; background: var(--linea); margin: var(--space-6) 0; opacity: 0; transition: opacity 0.6s ease 0.45s; }
 .hero-divider.animate { opacity: 1; }
 
-/* Cuerpo: Roboto Mono 21/34 */
 .hero-bio {
   font-family: var(--f-cuerpo); font-weight: 400;
   font-size: 21px; line-height: 34px; color: var(--tinta);
@@ -167,7 +166,7 @@ nav {
 }
 .hero-bio.animate { opacity: 1; transform: translateY(0); }
 
-/* ============ TICKER (tira de etiquetas con ★ rosa) ============ */
+/* ============ TICKER ============ */
 .ticker-wrap {
   border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea);
   padding: var(--space-3) 0; background: var(--superficie); overflow: hidden;
@@ -181,7 +180,7 @@ nav {
 .ticker-track span.sep { color: var(--rosa); padding: 0 var(--space-4); }
 @keyframes ticker-scroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-/* ============ SECCIONES (alternan papel y superficie) ============ */
+/* ============ SECCIONES ============ */
 .wrap-papel { background: var(--papel); }
 .wrap-superficie { background: var(--superficie); border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea); }
 .section {
@@ -227,14 +226,12 @@ nav {
   margin-bottom: var(--space-3); gap: var(--space-4);
 }
 .exp-badges { display: flex; flex-wrap: wrap; gap: var(--space-1); }
-/* Fechas: estilo «dato» */
 .exp-date {
   font-family: var(--f-mono); font-weight: 600;
   font-size: 13px; line-height: 20px;
   color: var(--tinta-suave); white-space: nowrap; flex-shrink: 0;
 }
 
-/* Nombres de empresa: Merriweather «titular» */
 .exp-company {
   font-family: var(--f-titular); font-weight: 700;
   font-size: 26px; line-height: 34px; color: var(--tinta); display: inline;
@@ -254,7 +251,6 @@ nav {
   font-family: var(--f-mono); font-weight: 600;
   font-size: 15px; color: var(--azul); margin-bottom: var(--space-1);
 }
-/* Listas en tarjetas: «cuerpo-sm» 16/26 */
 .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: var(--space-1); }
 .exp-bullets li {
   font-family: var(--f-cuerpo); font-size: 16px; line-height: 26px;
@@ -262,7 +258,6 @@ nav {
 }
 .exp-bullets li::before { content:'·'; color: var(--azul); font-weight: 700; flex-shrink: 0; }
 
-/* Chips: IBM Plex Mono 11px, radio 4px */
 .badge {
   font-family: var(--f-mono); font-weight: 600;
   font-size: 11px; line-height: 14px; letter-spacing: 0.1em; text-transform: uppercase;
@@ -274,7 +269,6 @@ nav {
 
 /* ============ FORMACIÓN ============ */
 .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); }
-/* Cifras: IBM Plex Mono */
 .edu-year-big {
   font-family: var(--f-mono); font-weight: 600;
   font-size: 44px; line-height: 48px; letter-spacing: -0.02em;
@@ -316,7 +310,7 @@ nav {
 }
 .cert-card:hover .cert-link { opacity: 1; }
 
-/* ============ HERRAMIENTA ============ */
+/* ============ TARJETAS (PROYECTOS & HERRAMIENTAS) ============ */
 .tool-card {
   border: 1px solid var(--linea); padding: var(--space-10);
   display: grid; grid-template-columns: 1fr auto; gap: var(--space-16); align-items: center;
@@ -336,7 +330,6 @@ nav {
   font-size: 40px; line-height: 48px; color: var(--tinta); margin-bottom: var(--space-4);
 }
 .tool-desc { font-family: var(--f-cuerpo); font-size: 16px; line-height: 26px; color: var(--tinta-suave); max-width: 620px; }
-/* Botón principal: relleno azul, texto on-azul, radio 10px */
 .btn-primary {
   display: inline-flex; align-items: center; gap: var(--space-2);
   background: var(--azul); color: var(--on-azul);
@@ -365,7 +358,7 @@ nav {
 }
 .skill-tag:hover { border-color: var(--azul); background: var(--azul-suave); color: var(--azul); transform: translateY(-2px); }
 
-/* ============ FOOTER (cierre en papel con halo) ============ */
+/* ============ FOOTER ============ */
 footer {
   background: var(--papel); color: var(--tinta);
   padding: var(--space-16) 2rem;
@@ -388,7 +381,7 @@ footer::before {
   word-break: break-all;
 }
 .footer-email:hover { opacity: 0.7; }
-.footer-right { display: flex; align-items: center; gap: var(--space-6); }
+.footer-right { display: flex; align-items: center; gap: 1rem; }
 .social-btn {
   width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
   border: 1px solid var(--linea); background: var(--superficie); color: var(--tinta); text-decoration: none;
@@ -398,6 +391,7 @@ footer::before {
 .footer-copy {
   font-family: var(--f-mono); font-weight: 600;
   font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--tinta-suave);
+  margin-left: var(--space-4);
 }
 .footer-copy .r { color: var(--azul); }
 
@@ -499,6 +493,7 @@ footer::before {
       <ul class="nav-links">
         <li><a href="#experiencia" class="nav-item" data-key="nav_exp">Experiencia</a></li>
         <li><a href="#formacion" class="nav-item" data-key="nav_edu">Formación</a></li>
+        <li><a href="#proyectos" class="nav-item" data-key="nav_projects">Proyectos</a></li>
         <li><a href="#herramientas" class="nav-item" data-key="nav_tools">Herramientas</a></li>
         <li><a href="#habilidades" class="nav-item" data-key="nav_skills">Habilidades</a></li>
         <li><a href="#contacto" class="nav-item" data-key="nav_contact">Contacto</a></li>
@@ -751,11 +746,31 @@ footer::before {
 </section>
 </div>
 
-<!-- HERRAMIENTA -->
+<!-- PROYECTOS -->
 <div class="wrap-papel">
+<section id="proyectos" class="section">
+  <div class="reveal">
+    <span class="section-label etiqueta" data-key="sec_projects">03 — Proyectos</span>
+  </div>
+  <div class="tool-card reveal">
+    <div>
+      <span class="tool-tag" data-key="proj_tag">Primer Proyecto de Datos · Pipeline Integral · 2026 · Activo</span>
+      <h3 class="tool-title" data-key="proj_title">The Grocery Report</h3>
+      <p class="tool-desc" data-key="proj_desc">Mi primer proyecto de datos desarrollado desde cero con el objetivo de dominar el ciclo analítico completo: ingesta, limpieza, modelado y visualización final. Aplicado a un entorno real y cotidiano como el consumo de supermercado de una unidad familiar, el proyecto procesa y estructura el histórico de compras para desglosar la evolución de precios por unidad, la distribución del gasto por categoría y los patrones de reaprovisionamiento del hogar.</p>
+    </div>
+    <a href="https://rociogarciadmgz.github.io/the-grocery-report/#idea" target="_blank" class="btn-primary">
+      <span data-key="proj_btn">Ver proyecto</span>
+      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+    </a>
+  </div>
+</section>
+</div>
+
+<!-- HERRAMIENTA -->
+<div class="wrap-superficie">
 <section id="herramientas" class="section">
   <div class="reveal">
-    <span class="section-label etiqueta" data-key="sec_tools">03 — Herramientas</span>
+    <span class="section-label etiqueta pink" data-key="sec_tools">04 — Herramientas</span>
   </div>
   <div class="tool-card reveal">
     <div>
@@ -772,10 +787,10 @@ footer::before {
 </div>
 
 <!-- HABILIDADES -->
-<div class="wrap-superficie">
+<div class="wrap-papel">
 <section id="habilidades" class="section">
   <div class="reveal">
-    <span class="section-label etiqueta pink" data-key="sec_skills">04 — Habilidades</span>
+    <span class="section-label etiqueta" data-key="sec_skills">05 — Habilidades</span>
   </div>
   <div class="skills-grid">
     <div class="reveal">
@@ -799,252 +814,4 @@ footer::before {
       </div>
     </div>
     <div class="reveal" style="transition-delay:0.13s">
-      <span class="skill-cat-label" data-key="sk_cat3">Softwares de Gestión</span>
-      <div class="skill-tags">
-        <span class="skill-tag">Gstock</span>
-        <span class="skill-tag" data-key="sk_agora">Ágora</span>
-        <span class="skill-tag">Odoo</span>
-      </div>
-    </div>
-    <div class="reveal" style="transition-delay:0.19s">
-      <span class="skill-cat-label" data-key="sk_cat4">Idiomas</span>
-      <div class="skill-tags">
-        <span class="skill-tag" data-key="lang1">Español (Nativo)</span>
-        <span class="skill-tag" data-key="lang2">Inglés (B2+)</span>
-      </div>
-    </div>
-  </div>
-</section>
-</div>
-
-<!-- FOOTER -->
-<footer id="contacto">
-  <div class="footer-inner">
-    <span class="footer-contact-label etiqueta" data-key="footer_label">Contacto</span>
-    <div class="footer-row">
-      <a href="mailto:rociogarciadmgz@gmail.com" class="footer-email" id="footer-email" onclick="copyEmail(event)">rociogarciadmgz@gmail.com</a>
-      <div class="footer-right">
-        <a href="https://linkedin.com/in/rocio-garcia-dominguez" target="_blank" class="social-btn" aria-label="LinkedIn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <span class="footer-copy"><span class="r">R</span>G. © 2026</span>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-const T = {
-  es: {
-    nav_exp:"Experiencia", nav_edu:"Formación", nav_tools:"Herramientas", nav_skills:"Habilidades", nav_contact:"Contacto",
-    hero_bio:'Mi perfil profesional se orienta hacia la parte analítica y estratégica de la industria. Aunque cuento con alta formación y experiencia culinaria, mi objetivo es especializarme en la gestión de operaciones, el análisis de datos y la optimización y automatización de procesos para mejorar la eficiencia y la rentabilidad de los negocios de restauración.',
-
-    // Ticker
-    tk_data:"Análisis de Datos", tk_op:"Gestión Operativa", tk_n8n:"n8n", tk_sql:"SQL · Supabase",
-    tk_fb:"F&B Management", tk_ds:"Data Studio", tk_menu:"Ingeniería de Menús", tk_cost:"Control de Costes", tk_ai:"Inteligencia Artificial",
-
-    sec_exp:"01 — Experiencia",
-    exp_hint:"Toca cualquier experiencia para ver los detalles ↑",
-    exp0_role:"Analista de Datos y Producto", exp0_date:"Jul 2026 — Actualidad",
-    exp0_b1:"Análisis de métricas en plataformas de delivery mediante Metabase.",
-    exp0_b2:"Creación de dashboards para clientes e insights para propuestas comerciales.",
-    exp0_b3:"Colaboración con el equipo para la mejora continua de la plataforma digital.",
-    badge_intern0:"Prácticas", badge_pt0:"Jornada Parcial",
-    exp1_role:"Analista de Operaciones", exp1_date:"May — Jul 2026",
-    exp1_b1:"Diseño de dashboards e informes de gestión empresarial.",
-    exp1_b2:"Estructuración de la base de datos de compras y documentación interna.",
-    exp1_b3:"Revisión de integraciones entre softwares y corrección de inconsistencias.",
-    badge_intern:"Prácticas", badge_ft:"Jornada Completa",
-    exp2_role:"Automatización y Operaciones", exp2_date:"Ene — Abr 2026",
-    exp2_b1:"Implementación de flujos en n8n para reducir tiempos operativos.",
-    exp2_b2:"Auditoría y control de calidad en procesos operativos de cocina.",
-    badge_intern2:"Prácticas", badge_pt:"Jornada Parcial",
-    exp3_role:"Ayudante de Cocina", exp3_date:"Dic 2025 — Ene 2026",
-    exp3_b1:"Preparación de mise en place y emplatado final durante la campaña de Navidad.",
-    badge_pt2:"Jornada Parcial",
-    exp4_role:"Auxiliar Administrativa", exp4_date:"Jun — Jul 2025",
-    exp4_b1:"Gestión integral de facturación y conciliación bancaria diaria.",
-    exp4_b2:"Actualización y control de inventario de una bodega con más de 400 referencias.",
-    exp4_michelin:"★★ Michelin",
-    badge_intern3:"Prácticas", badge_ft2:"Jornada Completa",
-    exp5_role:"Ayudante de Cocina", exp5_date:"Jul — Ago 2024",
-    exp5_b1:"Ejecución técnica de mise en place bajo estándares Michelin de alta cocina.",
-    exp5_b2:"Responsable del acabado y emplatado final durante el pase.",
-    exp5_michelin:"★ Michelin",
-    badge_intern4:"Prácticas", badge_ft3:"Jornada Completa",
-    sec_edu:"02 — Formación",
-    edu_degree:"Grado en Gastronomía e Innovación Culinaria",
-    edu_desc1:"Formación interdisciplinaria que integra la gestión y dirección de empresas del sector gastronómico y de la hostelería, combinando conocimientos teóricos con la práctica directa en cocina, la innovación y la sostenibilidad.",
-    sec_certs:"Cursos y Certificaciones",
-    cert1_t:"Business Analytics", cert2_t:"n8n + Agentes IA", cert3_t:"MySQL a Supabase", cert4_t:"F&B Management",
-    cert1_date:"Mar 2026", cert2_date:"Feb 2026", cert3_date:"Ene 2026", cert4_date:"Oct 2025",
-    btn_cert:"Ver →", btn_cert2:"Ver →", btn_cert3:"Ver →", btn_cert4:"Ver →",
-    sec_tools:"03 — Herramientas",
-    tool_tag:"Desarrollo Propio · Web App · 2026 · Activo",
-    tool_title:"Ingeniería de Menús",
-    tool_desc:"Aplicación interactiva diseñada para analizar la rentabilidad y popularidad de los platos de una carta. Clasifica el menú en base a la matriz de ingeniería de menús (Estrellas, Caballos de batalla, Rompecabezas y Perros) para optimizar los márgenes de beneficio de forma estratégica de un negocio de restauración.",
-    tool_btn:"Probar herramienta",
-    sec_skills:"04 — Habilidades",
-    sk_cat1:"Automatización & Datos", sk_auto_2:"Inteligencia Artificial",
-    sk_cat2:"Gestión de Restaurantes", sk_fb:"Alimentación y bebidas",
-    sk_inv:"Gestión de inventarios", sk_ops:"Gestión operativa", sk_cost:"Control de costes",
-    sk_cat3:"Softwares de Gestión", sk_agora:"Ágora",
-    sk_cat4:"Idiomas", lang1:"Español (Nativo)", lang2:"Inglés (B2+)",
-    footer_label:"Contacto"
-  },
-  en: {
-    nav_exp:"Experience", nav_edu:"Education", nav_tools:"Tools", nav_skills:"Skills", nav_contact:"Contact",
-    hero_bio:'My professional profile is oriented towards the analytical and strategic side of the industry. Although I have extensive culinary training and experience, my goal is to specialize in operations management, data analysis, and process optimization and automation to improve efficiency and profitability in hospitality businesses.',
-
-    // Ticker
-    tk_data:"Data Analysis", tk_op:"Operations Management", tk_n8n:"n8n", tk_sql:"SQL · Supabase",
-    tk_fb:"F&B Management", tk_ds:"Data Studio", tk_menu:"Menu Engineering", tk_cost:"Cost Control", tk_ai:"Artificial Intelligence",
-
-    sec_exp:"01 — Experience",
-    exp_hint:"Tap any experience to see the details ↑",
-    exp0_role:"Data & Product Analyst", exp0_date:"Jul 2026 — Present",
-    exp0_b1:"Analysis of metrics on delivery platforms using Metabase.",
-    exp0_b2:"Creation of dashboards for clients and insights for commercial proposals.",
-    exp0_b3:"Collaboration with the team on the continuous improvement of the digital platform.",
-    badge_intern0:"Internship", badge_pt0:"Part Time",
-    exp1_role:"Operations Analyst", exp1_date:"May — Jul 2026",
-    exp1_b1:"Design of dashboards and business management reports.",
-    exp1_b2:"Structuring of the purchasing database and internal documentation.",
-    exp1_b3:"Review of software integrations and correction of inconsistencies.",
-    badge_intern:"Internship", badge_ft:"Full Time",
-    exp2_role:"Automation & Operations", exp2_date:"Jan — Apr 2026",
-    exp2_b1:"Implementation of n8n workflows to reduce operational times.",
-    exp2_b2:"Auditing and quality control in operational kitchen processes.",
-    badge_intern2:"Internship", badge_pt:"Part Time",
-    exp3_role:"Kitchen Assistant", exp3_date:"Dec 2025 — Jan 2026",
-    exp3_b1:"Preparation of mise en place and final plating during the Christmas campaign.",
-    badge_pt2:"Part Time",
-    exp4_role:"Administrative Assistant", exp4_date:"Jun — Jul 2025",
-    exp4_b1:"Comprehensive billing management and daily bank reconciliation.",
-    exp4_b2:"Update and control of inventory for a cellar with more than 400 references.",
-    exp4_michelin:"★★ Michelin",
-    badge_intern3:"Internship", badge_ft2:"Full Time",
-    exp5_role:"Kitchen Assistant", exp5_date:"Jul — Aug 2024",
-    exp5_b1:"Technical execution of mise en place under Michelin standards for haute cuisine.",
-    exp5_b2:"Responsible for final finishing and plating during service.",
-    exp5_michelin:"★ Michelin",
-    badge_intern4:"Internship", badge_ft3:"Full Time",
-    sec_edu:"02 — Education",
-    edu_degree:"Bachelor's in Gastronomy and Culinary Innovation",
-    edu_desc1:"Interdisciplinary training integrating the management of companies in the gastronomy and hospitality sector, combining theoretical knowledge with direct kitchen practice, innovation, and sustainability.",
-    sec_certs:"Courses & Certifications",
-    cert1_t:"Business Analytics", cert2_t:"n8n + AI Agents", cert3_t:"MySQL to Supabase", cert4_t:"F&B Management",
-    cert1_date:"Mar 2026", cert2_date:"Feb 2026", cert3_date:"Jan 2026", cert4_date:"Oct 2025",
-    btn_cert:"View →", btn_cert2:"View →", btn_cert3:"View →", btn_cert4:"View →",
-    sec_tools:"03 — Tools",
-    tool_tag:"Own Development · Web App · 2026 · Active",
-    tool_title:"Menu Engineering App",
-    tool_desc:"Interactive application designed to analyze the profitability and popularity of menu items. Classifies the menu using the menu engineering matrix (Stars, Plowhorses, Puzzles, and Dogs) to strategically optimize profit margins in a restaurant business.",
-    tool_btn:"Try the tool",
-    sec_skills:"04 — Skills",
-    sk_cat1:"Automation & Data", sk_auto_2:"Artificial Intelligence",
-    sk_cat2:"Restaurant Management", sk_fb:"Food & Beverage",
-    sk_inv:"Inventory management", sk_ops:"Operations management", sk_cost:"Cost control",
-    sk_cat3:"Management Software", sk_agora:"Agora",
-    sk_cat4:"Languages", lang1:"Spanish (Native)", lang2:"English (B2+)",
-    footer_label:"Contact"
-  }
-};
-
-let currentLang = 'es';
-
-// Acordeón de experiencia
-function toggleExp(row) {
-  const wasOpen = row.classList.contains('open');
-  document.querySelectorAll('.exp-row').forEach(r => r.classList.remove('open'));
-  if (!wasOpen) row.classList.add('open');
-}
-
-// Copiar email al hacer clic
-function copyEmail(e) {
-  e.preventDefault();
-  const email = 'rociogarciadmgz@gmail.com';
-  navigator.clipboard.writeText(email).then(() => {
-    const el = document.getElementById('footer-email');
-    const original = el.textContent;
-    el.textContent = currentLang === 'es' ? '¡Copiado! ✓' : 'Copied! ✓';
-    setTimeout(() => { el.textContent = original; }, 1600);
-  }).catch(() => { window.location.href = 'mailto:' + email; });
-}
-
-function setLang(lang) {
-  currentLang = lang;
-  document.documentElement.lang = lang;
-  document.querySelectorAll('[data-key]').forEach(el => {
-    const k = el.getAttribute('data-key');
-    if (T[lang][k] === undefined) return;
-    el.textContent = T[lang][k];
-  });
-  document.getElementById('btn-es').classList.toggle('active', lang === 'es');
-  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-}
-
-// Animación de entrada del nombre
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.querySelectorAll('.name-word').forEach(w => w.classList.add('animate'));
-    document.getElementById('hero-divider').classList.add('animate');
-    document.getElementById('hero-bio').classList.add('animate');
-  }, 120);
-});
-
-// Reveal on scroll
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-setTimeout(() => {
-  document.querySelectorAll('.reveal').forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
-  });
-}, 80);
-
-// Nav active state
-const sections = document.querySelectorAll('section, header, footer');
-const navItems = document.querySelectorAll('.nav-item');
-window.addEventListener('scroll', () => {
-  let currentId = '';
-  sections.forEach(s => {
-    if (scrollY >= s.offsetTop - 120) currentId = s.getAttribute('id');
-  });
-  navItems.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href').includes(currentId) && currentId !== 'inicio') link.classList.add('active');
-  });
-});
-
-// Cursor personalizado
-(function() {
-  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-  const bubble = document.getElementById('cursorBubble');
-  if (!bubble) return;
-  let mouseX = 0, mouseY = 0, scale = 1;
-
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX; mouseY = e.clientY;
-    bubble.classList.add('show');
-  });
-  window.addEventListener('mouseleave', () => bubble.classList.remove('show'));
-  window.addEventListener('mousedown', () => { scale = 0.8; });
-  window.addEventListener('mouseup', () => { scale = 1; });
-
-  function raf() {
-    bubble.style.transform = `translate(${mouseX - 3}px, ${mouseY - 3}px) scale(${scale})`;
-    requestAnimationFrame(raf);
-  }
-  raf();
-
-  const hoverables = 'a, button, .exp-row, .skill-tag, .btn-primary, .social-btn, .lang-pill button';
-  document.querySelectorAll(hoverables).forEach(el => {
-    el.addEventListener('mouseenter', () => { bubble.classList.add('hover'); scale = 1.3; });
-    el.addEventListener('mouseleave', () => { bubble.classList.remove('hover'); scale = 1; });
-  });
-})();
-</script>
-</body>
-</html>
+      <span class="skill-cat-
