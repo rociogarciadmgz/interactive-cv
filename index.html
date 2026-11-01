@@ -814,4 +814,124 @@ footer::before {
       </div>
     </div>
     <div class="reveal" style="transition-delay:0.13s">
-      <span class="skill-cat-
+      <span class="skill-cat-label" data-key="sk_cat3">Softwares de Gestión</span>
+      <div class="skill-tags">
+        <span class="skill-tag">Gstock</span>
+        <span class="skill-tag" data-key="sk_agora">Ágora</span>
+        <span class="skill-tag">Odoo</span>
+      </div>
+    </div>
+    <div class="reveal" style="transition-delay:0.19s">
+      <span class="skill-cat-label" data-key="sk_cat4">Idiomas</span>
+      <div class="skill-tags">
+        <span class="skill-tag" data-key="lang1">Español (Nativo)</span>
+        <span class="skill-tag" data-key="lang2">Inglés (B2+)</span>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- FOOTER -->
+<footer id="contacto">
+  <div class="footer-inner">
+    <span class="footer-contact-label etiqueta" data-key="footer_label">Contacto</span>
+    <div class="footer-row">
+      <a href="mailto:rociogarciadmgz@gmail.com" class="footer-email" id="footer-email" onclick="copyEmail(event)">rociogarciadmgz@gmail.com</a>
+      <div class="footer-right">
+        <a href="https://github.com/rociogarciadmgz" target="_blank" class="social-btn" aria-label="GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/rocio-garcia-dominguez" target="_blank" class="social-btn" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <span class="footer-copy"><span class="r">R</span>G. © 2026</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const T = {
+  es: {
+    nav_exp:"Experiencia", nav_edu:"Formación", nav_projects:"Proyectos", nav_tools:"Herramientas", nav_skills:"Habilidades", nav_contact:"Contacto",
+    hero_bio:'Mi perfil profesional se orienta hacia la parte analítica y estratégica de la industria. Aunque cuento con alta formación y experiencia culinaria, mi objetivo es especializarme en la gestión de operaciones, el análisis de datos y la optimización y automatización de procesos para mejorar la eficiencia y la rentabilidad de los negocios de restauración.',
+
+    // Ticker
+    tk_data:"Análisis de Datos", tk_op:"Gestión Operativa", tk_n8n:"n8n", tk_sql:"SQL · Supabase",
+    tk_fb:"F&B Management", tk_ds:"Data Studio", tk_menu:"Ingeniería de Menús", tk_cost:"Control de Costes", tk_ai:"Inteligencia Artificial",
+
+    sec_exp:"01 — Experiencia",
+    exp_hint:"Toca cualquier experiencia para ver los detalles ↑",
+    exp0_role:"Analista de Datos y Producto", exp0_date:"Jul 2026 — Actualidad",
+    exp0_b1:"Análisis de métricas en plataformas de delivery mediante Metabase.",
+    exp0_b2:"Creación de dashboards para clientes e insights para propuestas comerciales.",
+    exp0_b3:"Colaboración con el equipo para la mejora continua de la plataforma digital.",
+    badge_intern0:"Prácticas", badge_pt0:"Jornada Parcial",
+    exp1_role:"Analista de Operaciones", exp1_date:"May — Jul 2026",
+    exp1_b1:"Diseño de dashboards e informes de gestión empresarial.",
+    exp1_b2:"Estructuración de la base de datos de compras y documentación interna.",
+    exp1_b3:"Revisión de integraciones entre softwares y corrección de inconsistencias.",
+    badge_intern:"Prácticas", badge_ft:"Jornada Completa",
+    exp2_role:"Automatización y Operaciones", exp2_date:"Ene — Abr 2026",
+    exp2_b1:"Implementación de flujos en n8n para reducir tiempos operativos.",
+    exp2_b2:"Auditoría y control de calidad en procesos operativos de cocina.",
+    badge_intern2:"Prácticas", badge_pt:"Jornada Parcial",
+    exp3_role:"Ayudante de Cocina", exp3_date:"Dic 2025 — Ene 2026",
+    exp3_b1:"Preparación de mise en place y emplatado final durante la campaña de Navidad.",
+    badge_pt2:"Jornada Parcial",
+    exp4_role:"Auxiliar Administrativa", exp4_date:"Jun — Jul 2025",
+    exp4_b1:"Gestión integral de facturación y conciliación bancaria diaria.",
+    exp4_b2:"Actualización y control de inventario de una bodega con más de 400 referencias.",
+    exp4_michelin:"★★ Michelin",
+    badge_intern3:"Prácticas", badge_ft2:"Jornada Completa",
+    exp5_role:"Ayudante de Cocina", exp5_date:"Jul — Ago 2024",
+    exp5_b1:"Ejecución técnica de mise en place bajo estándares Michelin de alta cocina.",
+    exp5_b2:"Responsable del acabado y emplatado final durante el pase.",
+    exp5_michelin:"★ Michelin",
+    badge_intern4:"Prácticas", badge_ft3:"Jornada Completa",
+    sec_edu:"02 — Formación",
+    edu_degree:"Grado en Gastronomía e Innovación Culinaria",
+    edu_desc1:"Formación interdisciplinaria que integra la gestión y dirección de empresas del sector gastronómico y de la hostelería, combinando conocimientos teóricos con la práctica directa en cocina, la innovación y la sostenibilidad.",
+    sec_certs:"Cursos y Certificaciones",
+    cert1_t:"Business Analytics", cert2_t:"n8n + Agentes IA", cert3_t:"MySQL a Supabase", cert4_t:"F&B Management",
+    cert1_date:"Mar 2026", cert2_date:"Feb 2026", cert3_date:"Ene 2026", cert4_date:"Oct 2025",
+    btn_cert:"Ver →", btn_cert2:"Ver →", btn_cert3:"Ver →", btn_cert4:"Ver →",
+    sec_projects:"03 — Proyectos",
+    proj_tag:"Primer Proyecto de Datos · Pipeline Integral · 2026 · Activo",
+    proj_title:"The Grocery Report",
+    proj_desc:"Mi primer proyecto de datos desarrollado desde cero con el objetivo de dominar el ciclo analítico completo: ingesta, limpieza, modelado y visualización final. Aplicado a un entorno real y cotidiano como el consumo de supermercado de una unidad familiar, el proyecto procesa y estructura el histórico de compras para desglosar la evolución de precios por unidad, la distribución del gasto por categoría y los patrones de reaprovisionamiento del hogar.",
+    proj_btn:"Ver proyecto",
+    sec_tools:"04 — Herramientas",
+    tool_tag:"Desarrollo Propio · Web App · 2026 · Activo",
+    tool_title:"Ingeniería de Menús",
+    tool_desc:"Aplicación interactiva diseñada para analizar la rentabilidad y popularidad de los platos de una carta. Clasifica el menú en base a la matriz de ingeniería de menús (Estrellas, Caballos de batalla, Rompecabezas y Perros) para optimizar los márgenes de beneficio de forma estratégica de un negocio de restauración.",
+    tool_btn:"Probar herramienta",
+    sec_skills:"05 — Habilidades",
+    sk_cat1:"Automatización & Datos", sk_auto_2:"Inteligencia Artificial",
+    sk_cat2:"Gestión de Restaurantes", sk_fb:"Alimentación y bebidas",
+    sk_inv:"Gestión de inventarios", sk_ops:"Gestión operativa", sk_cost:"Control de costes",
+    sk_cat3:"Softwares de Gestión", sk_agora:"Ágora",
+    sk_cat4:"Idiomas", lang1:"Español (Nativo)", lang2:"Inglés (B2+)",
+    footer_label:"Contacto"
+  },
+  en: {
+    nav_exp:"Experience", nav_edu:"Education", nav_projects:"Projects", nav_tools:"Tools", nav_skills:"Skills", nav_contact:"Contact",
+    hero_bio:'My professional profile is oriented towards the analytical and strategic side of the industry. Although I have extensive culinary training and experience, my goal is to specialize in operations management, data analysis, and process optimization and automation to improve efficiency and profitability in hospitality businesses.',
+
+    // Ticker
+    tk_data:"Data Analysis", tk_op:"Operations Management", tk_n8n:"n8n", tk_sql:"SQL · Supabase",
+    tk_fb:"F&B Management", tk_ds:"Data Studio", tk_menu:"Menu Engineering", tk_cost:"Cost Control", tk_ai:"Artificial Intelligence",
+
+    sec_exp:"01 — Experience",
+    exp_hint:"Tap any experience to see the details ↑",
+    exp0_role:"Data & Product Analyst", exp0_date:"Jul 2026 — Present",
+    exp0_b1:"Analysis of metrics on delivery platforms using Metabase.",
+    exp0_b2:"Creation of dashboards for clients and insights for commercial proposals.",
+    exp0_b3:"Collaboration with the team on the continuous improvement of the digital platform.",
+    badge_intern0:"Internship", badge_pt0:"Part Time",
+    exp1_role:"Operations Analyst", exp1_date:"May — Jul 2026",
+    exp1_b1:"Design of dashboards and business management reports.",
+    exp1_b2:"Structuring of the purchasing database and internal documentation.",
+    exp1_b3:"Review of software integrations and correction of inconsistencies.",
+    badge_intern:"Internship", badge_ft:"
